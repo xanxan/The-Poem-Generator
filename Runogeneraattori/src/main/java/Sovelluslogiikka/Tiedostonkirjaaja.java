@@ -22,8 +22,8 @@ public class Tiedostonkirjaaja {
     }
     
     public void lisaaSana(File tiedosto, String sana) throws IOException {
-         this.kirjoittaja = new FileWriter(tiedosto);
-         kirjoittaja.write(sana);
+         this.kirjoittaja = new FileWriter(tiedosto, true);
+         kirjoittaja.append(sana + '\n');
          kirjoittaja.close();
     }
 }
