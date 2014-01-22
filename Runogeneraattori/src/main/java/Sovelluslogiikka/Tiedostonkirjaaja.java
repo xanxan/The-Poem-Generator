@@ -15,15 +15,20 @@ import java.io.IOException;
 public class Tiedostonkirjaaja {
   
     private FileWriter kirjoittaja;
+    private Tiedostonlukija lukija;
     
     public Tiedostonkirjaaja() {
-     
+        this.lukija = new Tiedostonlukija();
        
     }
     
-    public void lisaaSana(File tiedosto, String sana) throws IOException {
-         this.kirjoittaja = new FileWriter(tiedosto, true);
-         kirjoittaja.append(sana + '\n');
-         kirjoittaja.close();
+    public boolean lisaaSana(File tiedosto, String sana) throws IOException {
+         if (!this.lukija.onkoSanaVarastossa(sana, tiedosto)) {
+              this.kirjoittaja = new FileWriter(tiedosto, true);
+              kirjoittaja.append(sana + '\n');
+              kirjoittaja.close();
+              return true;
+         }
+         return false;
     }
 }

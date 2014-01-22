@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.005" errors="0" skipped="0" tests="1" name="superlabra.runogeneraattori.AppTest">
+<testsuite failures="0" time="0.056" errors="0" skipped="0" tests="2" name="Sovelluslogiikka.TiedostonkirjaajaTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -64,5 +64,6 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0" classname="superlabra.runogeneraattori.AppTest" name="testApp"/>
+  <testcase time="0.016" classname="Sovelluslogiikka.TiedostonkirjaajaTest" name="KirjaajaLisaaSanan"/>
+  <testcase time="0" classname="Sovelluslogiikka.TiedostonkirjaajaTest" name="KirjaajaEiLisaaSanaaJokaLoytyyVarastosta"/>
 </testsuite>

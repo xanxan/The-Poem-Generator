@@ -8,6 +8,6 @@ package Sanavarasto;
  *
  * @author anna
  */
-public class lol {
+public class Varasto {
     
 }

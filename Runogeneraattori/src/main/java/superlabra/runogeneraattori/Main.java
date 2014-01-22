@@ -33,7 +33,10 @@ public class Main {
         Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja();
         System.out.println("anna lisättävä sana");
         String lisattava = moi.LueSyote();
-        kirjaaja.lisaaSana(tiedosto, lisattava);
+        if (!kirjaaja.lisaaSana(tiedosto, lisattava)) {
+            System.out.println("sana on jo varastossa");
+        }
+        
         System.out.println("anna sana");
         String sana = moi.LueSyote();
         if (scanneri.onkoSanaVarastossa(sana, tiedosto)) {
@@ -41,6 +44,8 @@ public class Main {
         } else {
             System.out.println("sana ei ole varastossa");
         }
+        String random = scanneri.valitseSatunnainenSana(tiedosto);
+        System.out.println(random + " on paras!");
         
     }
 }
