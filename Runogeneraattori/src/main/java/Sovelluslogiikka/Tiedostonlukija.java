@@ -16,7 +16,7 @@ import java.util.*;
 public class Tiedostonlukija {
     
     private Scanner lukija;
-    private Random arpoja;
+    private Arpoja arpoja;
     private List<String> lista;
     
     public Tiedostonlukija() {
@@ -40,7 +40,7 @@ public class Tiedostonlukija {
     public String valitseSatunnainenSana(File tiedosto) throws FileNotFoundException {
         this.lukija = new Scanner(tiedosto);
         this.lista = new ArrayList<String>();
-        this.arpoja = new Random();
+        this.arpoja = new Arpoja();
         
         while (lukija.hasNextLine()) {
             String rivi = lukija.nextLine();
@@ -48,7 +48,8 @@ public class Tiedostonlukija {
         }
         
         lukija.close();
-        String sana = lista.get(arpoja.nextInt(lista.size()));
+        String sana;
+        sana = lista.get(arpoja.SatunnainenLuku(lista.size()));
         
         return sana;
     }

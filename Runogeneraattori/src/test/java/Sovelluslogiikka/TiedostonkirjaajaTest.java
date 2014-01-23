@@ -38,7 +38,26 @@ public class TiedostonkirjaajaTest {
         
         File testitiedosto = new File("testitiedosto.txt");
         Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja();
-        assertEquals(true, kirjuri.lisaaSana(testitiedosto, "ankka"));
+        kirjuri.lisaaSana(testitiedosto, "ankka");
         assertEquals(false, kirjuri.lisaaSana(testitiedosto, "ankka"));
     }
+    
+    @Test
+    public void KirjaajaTyhjentaaListan() throws IOException {
+        File testitiedosto = new File("testitiedosto.txt");
+        Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja();
+        kirjuri.lisaaSana(testitiedosto, "helsinki");
+        kirjuri.lisaaSana(testitiedosto, "tukholma");
+        kirjuri.lisaaSana(testitiedosto, "tallinna");
+        assertEquals(true, kirjuri.tyhjennaLista(testitiedosto));
+    }
+    
+    @Test
+    public void KirjaajaPoistaaSanan() throws IOException {
+        File testitiedosto = new File("testitiedosto.txt");
+        Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja();
+        kirjuri.lisaaSana(testitiedosto, "helmi");
+        assertTrue(kirjuri.poistaSana(testitiedosto, "helmi"));
+    }
+           
 }

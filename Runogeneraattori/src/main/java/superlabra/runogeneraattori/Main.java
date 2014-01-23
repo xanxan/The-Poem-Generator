@@ -5,6 +5,7 @@
 package superlabra.runogeneraattori;
 
 
+import Sovelluslogiikka.Arpoja;
 import Sovelluslogiikka.Syotteenlukija;
 import Sovelluslogiikka.Tiedostonkirjaaja;
 import Sovelluslogiikka.Tiedostonlukija;
@@ -26,26 +27,11 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        Syotteenlukija moi = new Syotteenlukija();
-        Tiedostonlukija scanneri = new Tiedostonlukija();
-        
-        File tiedosto = new File ("testitiedosto.txt");
-        Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja();
-        System.out.println("anna lisättävä sana");
-        String lisattava = moi.LueSyote();
-        if (!kirjaaja.lisaaSana(tiedosto, lisattava)) {
-            System.out.println("sana on jo varastossa");
-        }
-        
-        System.out.println("anna sana");
-        String sana = moi.LueSyote();
-        if (scanneri.onkoSanaVarastossa(sana, tiedosto)) {
-            System.out.println("sana on varastossa");
-        } else {
-            System.out.println("sana ei ole varastossa");
-        }
-        String random = scanneri.valitseSatunnainenSana(tiedosto);
-        System.out.println(random + " on paras!");
-        
+       Arpoja arpoja = new Arpoja();
+       int luku = 0;
+       while (luku < 10) {
+           System.out.println(arpoja.SatunnainenLuku(10));
+           luku++;
+       }
     }
 }

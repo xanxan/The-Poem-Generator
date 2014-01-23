@@ -5,6 +5,7 @@
 package Sovelluslogiikka;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -30,5 +31,24 @@ public class Tiedostonkirjaaja {
               return true;
          }
          return false;
+    }
+    
+    public boolean poistaSana(File tiedosto, String sana) throws FileNotFoundException, IOException {
+        if (this.lukija.onkoSanaVarastossa(sana, tiedosto)) {
+            this.kirjoittaja = new FileWriter(tiedosto, true);
+            kirjoittaja.close();
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean tyhjennaLista(File tiedosto) throws IOException {
+            this.kirjoittaja = new FileWriter(tiedosto, true);
+            if (tiedosto.length() != 0) {
+                kirjoittaja.write("");
+                kirjoittaja.close();
+                return true;
+            }
+            return false;
     }
 }
