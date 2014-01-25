@@ -9,3 +9,8 @@ aasi
 zeebra
 kissa
 anna
+joulu
+koira
+maija
+arpa
+katti

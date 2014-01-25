@@ -17,9 +17,10 @@ public class Tiedostonkirjaaja {
   
     private FileWriter kirjoittaja;
     private Tiedostonlukija lukija;
+    private Runokone kone;
     
-    public Tiedostonkirjaaja() {
-        this.lukija = new Tiedostonlukija();
+    public Tiedostonkirjaaja(Tiedostonlukija lukija) {
+        this.lukija = lukija;
        
     }
     
@@ -51,4 +52,5 @@ public class Tiedostonkirjaaja {
             }
             return false;
     }
+  
 }

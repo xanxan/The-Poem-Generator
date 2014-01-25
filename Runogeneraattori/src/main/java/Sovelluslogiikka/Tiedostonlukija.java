@@ -19,9 +19,17 @@ public class Tiedostonlukija {
     private Arpoja arpoja;
     private List<String> lista;
     
-    public Tiedostonlukija() {
-       
+    public Tiedostonlukija(Arpoja arpoja) {
+       this.arpoja = arpoja;
       
+    }
+    
+    public void tulostaTiedosto(File tiedosto) throws FileNotFoundException {
+        this.lukija = new Scanner(tiedosto);
+        while (lukija.hasNextLine()) {
+            System.out.println(lukija.nextLine());
+        }
+        lukija.close();
     }
     
     public boolean onkoSanaVarastossa(String sana, File tiedosto) throws FileNotFoundException {
@@ -40,7 +48,7 @@ public class Tiedostonlukija {
     public String valitseSatunnainenSana(File tiedosto) throws FileNotFoundException {
         this.lukija = new Scanner(tiedosto);
         this.lista = new ArrayList<String>();
-        this.arpoja = new Arpoja();
+       
         
         while (lukija.hasNextLine()) {
             String rivi = lukija.nextLine();
