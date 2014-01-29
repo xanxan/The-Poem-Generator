@@ -1,0 +1,6 @@
+laukku
+pöytä
+koira
+kissa
+talo
+laiva

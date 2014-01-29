@@ -5,9 +5,11 @@
 package Sanavarasto;
 
 
+import Sovelluslogiikka.Arpoja;
 import Sovelluslogiikka.Tiedostonlukija;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,17 +17,17 @@ import java.io.FileNotFoundException;
  */
 public class Lauseenrakentaja {
     private Sanavarasto varasto;
-    private Tiedostonlukija lukija;
-    private File adjektiivit;
-    private File substantiivit;
-    private File verbit;
-    private File partikkelit;
-    private File numeraalit;
-    private File pronominit;
     
-    public Lauseenrakentaja(Tiedostonlukija lukija) {
-        this.lukija = lukija;
-        this.varasto = new Sanavarasto();
+    private ArrayList<String>  adjektiivit;
+    private ArrayList<String>  substantiivit;
+    private ArrayList<String>  verbit;
+    private ArrayList<String>  partikkelit;
+    private ArrayList<String>  numeraalit;
+    private ArrayList<String>  pronominit;
+    
+    public Lauseenrakentaja(Arpoja arpoja) {
+       
+        this.varasto = new Sanavarasto(arpoja);
         this.adjektiivit = this.varasto.getAdjektiivit();
         this.numeraalit = this.varasto.getNumeraalit();
         this.substantiivit = this.varasto.getSubstantiivit();
@@ -35,44 +37,44 @@ public class Lauseenrakentaja {
     }
     
     public String Rakenne1() throws FileNotFoundException {
-        String rakenne = this.lukija.valitseSatunnainenSana(verbit);
+        String rakenne = this.varasto.valitseSatunnainenSana(verbit);
         
         return rakenne;
     }
     public String Rakenne2() throws FileNotFoundException {
-        String rakenne = this.lukija.valitseSatunnainenSana(partikkelit);
-        rakenne += " " + this.lukija.valitseSatunnainenSana(verbit);
+        String rakenne = this.varasto.valitseSatunnainenSana(partikkelit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(verbit);
         
         return rakenne;
     }
     public String Rakenne3() throws FileNotFoundException {
-        String rakenne = this.lukija.valitseSatunnainenSana(pronominit);
-        rakenne += " " + this.lukija.valitseSatunnainenSana(verbit);
-        rakenne += " " + this.lukija.valitseSatunnainenSana(substantiivit);
+        String rakenne = this.varasto.valitseSatunnainenSana(pronominit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(verbit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit);
         return"";
     }
     public String Rakenne4() throws FileNotFoundException {
-        String rakenne = this.lukija.valitseSatunnainenSana(numeraalit);
-        rakenne += " " + this.lukija.valitseSatunnainenSana(substantiivit);
-        rakenne += " " + this.lukija.valitseSatunnainenSana(verbit);
-        rakenne += " " + this.lukija.valitseSatunnainenSana(substantiivit);
+        String rakenne = this.varasto.valitseSatunnainenSana(numeraalit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(verbit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit);
         
         return rakenne;
     }
     public String Rakenne5() throws FileNotFoundException {
-        String rakenne = this.lukija.valitseSatunnainenSana(partikkelit);
-        rakenne += " " + this.lukija.valitseSatunnainenSana(pronominit);
-        rakenne += " " + this.lukija.valitseSatunnainenSana(verbit);
-        rakenne += " " + this.lukija.valitseSatunnainenSana(adjektiivit);
-        rakenne += " " + this.lukija.valitseSatunnainenSana(substantiivit);
+        String rakenne = this.varasto.valitseSatunnainenSana(partikkelit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(pronominit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(verbit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(adjektiivit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit);
         
         return rakenne;
     }
-    public String Rakenne6() {
-        return"";
-    }
-    public String Rakenne7() {
-        return"";
-    }
+//    public String Rakenne6() {
+//        return"";
+//    }
+//    public String Rakenne7() {
+//        return"";
+//    }
     
 }

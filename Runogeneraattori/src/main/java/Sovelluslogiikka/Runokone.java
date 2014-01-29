@@ -24,7 +24,7 @@ public class Runokone {
     public Runokone(Arpoja arpoja, Tiedostonkirjaaja kirjaaja, Tiedostonlukija lukija) {
         this.arpoja = arpoja;
         this.kirjaaja = kirjaaja;
-        this.rakentaja =  new Lauseenrakentaja(lukija);
+        this.rakentaja =  new Lauseenrakentaja(arpoja);
         
     }
     

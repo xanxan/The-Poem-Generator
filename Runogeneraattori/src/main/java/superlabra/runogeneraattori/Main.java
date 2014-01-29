@@ -6,6 +6,7 @@ package superlabra.runogeneraattori;
 
 
 import Sovelluslogiikka.Arpoja;
+import Sovelluslogiikka.Hallinto;
 import Sovelluslogiikka.Runokone;
 import Sovelluslogiikka.Syotteenlukija;
 import Sovelluslogiikka.Tiedostonkirjaaja;
@@ -28,33 +29,21 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException, IOException {
+        
        Syotteenlukija lukija = new Syotteenlukija();
       
        Arpoja arpoja = new Arpoja();
        
-       Tiedostonlukija l = new Tiedostonlukija(arpoja);
+       Tiedostonlukija l = new Tiedostonlukija();
         Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja(l);
         Runokone runokone = new Runokone(arpoja, kirjaaja, l);
-       
-        System.out.println("Anna lisättävä sanat ja lopuksi 'lopeta':");
-        while (true) {
-            System.out.println("Sana:");
-            String sana = lukija.LueSyote();
-            if (sana.equals("lopeta")) {
-                break;
-            }
-            System.out.println("Sanaluokka");
-            String sanaluokka = lukija.LueSyote();
-   
-            
-            File luokka = new File(sanaluokka + ".txt");
-          
-            kirjaaja.lisaaSana(luokka, sana);
-            
-        }
+        Hallinto hallinto = new Hallinto(l, kirjaaja, arpoja);
+        
+        hallinto.alustaOhjelma();
         
         System.out.println("Tulostetaan runo:");
         File runo = runokone.kirjoitaRuno();
+        
         l.tulostaTiedosto(runo);
     }
 }

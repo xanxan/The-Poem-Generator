@@ -16,11 +16,10 @@ import java.util.*;
 public class Tiedostonlukija {
     
     private Scanner lukija;
-    private Arpoja arpoja;
-    private List<String> lista;
+   
     
-    public Tiedostonlukija(Arpoja arpoja) {
-       this.arpoja = arpoja;
+    public Tiedostonlukija() {
+    
       
     }
     
@@ -45,20 +44,18 @@ public class Tiedostonlukija {
         return false;
     }
     
-    public String valitseSatunnainenSana(File tiedosto) throws FileNotFoundException {
+    
+    
+    public ArrayList<String> luoLista(File tiedosto) throws FileNotFoundException {
         this.lukija = new Scanner(tiedosto);
-        this.lista = new ArrayList<String>();
-       
-        
+        ArrayList<String> lista = new ArrayList();
         while (lukija.hasNextLine()) {
             String rivi = lukija.nextLine();
             lista.add(rivi);
         }
         
         lukija.close();
-        String sana;
-        sana = lista.get(arpoja.SatunnainenLuku(lista.size()));
+        return lista;
         
-        return sana;
     }
 }

@@ -4,50 +4,83 @@
  */
 package Sanavarasto;
 
-import java.io.File;
+import Sovelluslogiikka.Arpoja;
+
+import java.util.ArrayList;
 
 /**
  *
  * @author anna
  */
 public class Sanavarasto {
-    private File substantiivit;
-    private File adjektiivit;
-    private File verbit;
-    private File numeraalit;
-    private File partikkelit;
-    private File pronominit;
+    private ArrayList<String> substantiivit;
+    private ArrayList<String> adjektiivit;
+    private ArrayList<String> verbit;
+    private ArrayList<String> numeraalit;
+    private ArrayList<String> partikkelit;
+    private ArrayList<String> pronominit;
+    private Arpoja arpoja;
           
-    public Sanavarasto() {
-        this.adjektiivit = new File("adjektiivit.txt");
-        this.substantiivit = new File("substantiivit.txt");
-        this.verbit = new File("verbit.txt");
-        this.numeraalit = new File("numeraait.txt");
-        this.partikkelit = new File("partikkelit.txt");
-        this.pronominit = new File("pronominit.txt");
+    public Sanavarasto(Arpoja arpoja) {
+        
+        this.arpoja = arpoja;
     }
     
-    public File getSubstantiivit() {
+    public void setSubstantiivit(ArrayList<String> lista) {
+        this.substantiivit = lista;
+    }
+    
+    public void setAdjektiivit(ArrayList<String> lista) {
+        this.adjektiivit = lista;
+    }
+    
+    public void setVerbit(ArrayList<String> lista) {
+        this.verbit = lista;
+    }
+    
+    public void setNumeraalit(ArrayList<String> lista) {
+        this.numeraalit = lista;
+    }
+    
+    public void setPartikkelit(ArrayList<String> lista) {
+        this.partikkelit = lista;
+    }
+    
+    public void setPronominit(ArrayList<String> lista) {
+        this.pronominit = lista;
+    }
+    
+    
+    public ArrayList<String> getSubstantiivit() {
         return this.substantiivit;
     }
     
-    public File getAdjektiivit() {
+    public ArrayList<String> getAdjektiivit() {
         return this.adjektiivit;
     }
     
-    public File getVerbit() {
+    public ArrayList<String> getVerbit() {
         return this.verbit;
     }
     
-    public File getNumeraalit() {
+    public ArrayList<String> getNumeraalit() {
         return this.numeraalit;
     }
     
-    public File getPartikkelit() {
+    public ArrayList<String> getPartikkelit() {
         return this.partikkelit;
     }
     
-    public File getPronominit() {
+    public ArrayList<String> getPronominit() {
         return this.pronominit;
+    }
+    
+    public String valitseSatunnainenSana(ArrayList<String> lista) {
+       
+       
+        String sana;
+        sana = lista.get(arpoja.SatunnainenLuku(lista.size()));
+        
+        return sana;
     }
 }

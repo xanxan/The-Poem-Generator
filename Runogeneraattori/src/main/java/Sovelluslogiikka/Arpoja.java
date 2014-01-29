@@ -11,7 +11,7 @@ import java.util.Random;
  * @author anna
  */
 public class Arpoja {
-    private int luku;
+    private int luku = 0;
     private Random arpoja;
     
     public Arpoja() {
@@ -19,7 +19,9 @@ public class Arpoja {
     }
     
     public int SatunnainenLuku(int ylaraja) {
+        
         luku = arpoja.nextInt(ylaraja);
+        
         return luku;
     }
 }

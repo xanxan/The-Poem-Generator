@@ -4,9 +4,11 @@
  */
 package Sovelluslogiikka;
 
+import Sanavarasto.Sanavarasto;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -26,8 +28,9 @@ public class TiedostonlukijaTest {
    @Test
    public void SanaEiOleVarastossa() throws FileNotFoundException, IOException {
        
-       Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja();
+     
        Tiedostonlukija lukija = new Tiedostonlukija();
+       Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja(lukija);
        File testitiedosto = new File("testitiedosto.txt");
        
        kirjuri.lisaaSana(testitiedosto, "ankka");
@@ -46,7 +49,7 @@ public class TiedostonlukijaTest {
    public void SanaOnVarastossa() throws FileNotFoundException, IOException {
        
        Tiedostonlukija lukija = new Tiedostonlukija();
-       Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja();
+       Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja(lukija);
        File testitiedosto = new File("testitiedosto.txt");
        
        kirjuri.lisaaSana(testitiedosto, "anna");
@@ -57,10 +60,12 @@ public class TiedostonlukijaTest {
    
    @Test
    public void SamaaSanaaEiValitaKolmeaKertaaPerakkain() throws FileNotFoundException, IOException {
-       
+       Arpoja arpoja = new Arpoja();
        Tiedostonlukija lukija = new Tiedostonlukija();
+       ArrayList<String> lista = new ArrayList();
+       Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja(lukija);
+       Sanavarasto varasto = new Sanavarasto(arpoja);
        File testitiedosto = new File("testitiedosto.txt");
-       Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja();
        
        kirjuri.lisaaSana(testitiedosto, "hevonen");
        kirjuri.lisaaSana(testitiedosto, "aasi");
@@ -68,9 +73,9 @@ public class TiedostonlukijaTest {
        
        for (int i = 0; i < 10; i++) {
            
-         String s1 = lukija.valitseSatunnainenSana(testitiedosto);
-         String s2 = lukija.valitseSatunnainenSana(testitiedosto);
-         String s3 = lukija.valitseSatunnainenSana(testitiedosto);
+         String s1 = varasto.valitseSatunnainenSana(lista);
+         String s2 = varasto.valitseSatunnainenSana(lista);
+         String s3 = varasto.valitseSatunnainenSana(lista);
          
          assertFalse("Sama sana ei saa tulla kolmea kertaa peräkkäin", s1.equals(s3) && s1.equals(s2) && s2.equals(s3));
        }
