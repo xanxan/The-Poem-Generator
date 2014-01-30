@@ -37,6 +37,19 @@
             <artifactId>cobertura-maven-plugin</artifactId>
          
             <version>2.6</version>
+             <configuration>
+               <targetClasses>
+                  <param>runogeneraattori.sanavarasto.*</param>
+                  <param>runogeneraattori.sovelluslogiikka.*</param>
+                  <param>runogeneraattori.superlabra.runogeneraattori.*</param>
+                  
+               </targetClasses>
+               <targetTests>
+                  <param>runogeneraattori.sanavarasto.*</param>
+                  <param>runogeneraattori.sovelluslogiikka.*</param>
+                  <param>runogeneraattori.superlabra.runogeneraattori.*</param>
+               </targetTests>
+            </configuration>
         </plugin>
         <plugin>
             <groupId>org.pitest</groupId>
