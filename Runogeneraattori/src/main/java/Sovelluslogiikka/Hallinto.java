@@ -15,22 +15,16 @@ import java.util.ArrayList;
  * @author anna
  */
 public class Hallinto {
-    ArrayList<File> tiedostot;
-    Tiedostonlukija lukija;
-    Tiedostonkirjaaja kirjaaja;
-    Sanavarasto varasto;
+    
+    private Tiedostonlukija lukija;
+    private Tiedostonkirjaaja kirjaaja;
+    private Sanavarasto varasto;
     
     public Hallinto(Tiedostonlukija lukija, Tiedostonkirjaaja kirjaaja, Arpoja arpoja) {
         this.kirjaaja = kirjaaja;
-        this.tiedostot = new ArrayList();
+       
         this.lukija = lukija;
         this.varasto = new Sanavarasto(arpoja); 
-    }
-    
-    
-    
-    public void lisaaTiedosto(File tiedosto) {
-        this.tiedostot.add(tiedosto);
     }
     
     public void lisaaUusiSana(File tiedosto, String sana) throws IOException {
@@ -51,7 +45,7 @@ public class Hallinto {
         ArrayList<String> part = this.lukija.luoLista(partikkelit);
         ArrayList<String> pron = this.lukija.luoLista(pronominit);
         ArrayList<String> num = this.lukija.luoLista(numeraalit);
-        
+       
         this.varasto.setAdjektiivit(adj);
         this.varasto.setNumeraalit(num);
         this.varasto.setPartikkelit(part);

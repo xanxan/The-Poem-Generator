@@ -5,6 +5,7 @@
 package superlabra.runogeneraattori;
 
 
+import Sanavarasto.Lauseenrakentaja;
 import Sovelluslogiikka.Arpoja;
 import Sovelluslogiikka.Hallinto;
 import Sovelluslogiikka.Runokone;
@@ -30,20 +31,12 @@ public class Main {
      */
     public static void main(String[] args) throws FileNotFoundException, IOException {
         
-       Syotteenlukija lukija = new Syotteenlukija();
-      
-       Arpoja arpoja = new Arpoja();
-       
-       Tiedostonlukija l = new Tiedostonlukija();
-        Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja(l);
-        Runokone runokone = new Runokone(arpoja, kirjaaja, l);
-        Hallinto hallinto = new Hallinto(l, kirjaaja, arpoja);
-        
-        hallinto.alustaOhjelma();
-        
-        System.out.println("Tulostetaan runo:");
-        File runo = runokone.kirjoitaRuno();
-        
-        l.tulostaTiedosto(runo);
+       Tiedostonlukija lukija = new Tiedostonlukija();
+      Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja(lukija);
+      Arpoja arpoja = new Arpoja();
+       Hallinto hallinto = new Hallinto(lukija, kirjaaja, arpoja);
+       hallinto.alustaOhjelma();
+       Lauseenrakentaja rakentaja = new Lauseenrakentaja(arpoja);
+        System.out.println(rakentaja.Rakenne1());
     }
 }

@@ -45,7 +45,7 @@ public class Runokone {
     }
     
     public String sakeisto() throws FileNotFoundException {
-        int riveja = 1 + arpoja.SatunnainenLuku(6);
+        int riveja =1 + arpoja.SatunnainenLuku(6);
         String sakeisto = "";
         
         for (int i = 0; i < riveja; i++) {

@@ -34,6 +34,7 @@ public class Lauseenrakentaja {
         this.verbit = this.varasto.getVerbit();
         this.pronominit = this.varasto.getPronominit();
         this.partikkelit = this.varasto.getPartikkelit();
+        
     }
     
     public String Rakenne1() throws FileNotFoundException {

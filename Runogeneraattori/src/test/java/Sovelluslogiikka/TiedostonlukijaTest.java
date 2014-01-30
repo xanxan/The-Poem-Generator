@@ -59,26 +59,17 @@ public class TiedostonlukijaTest {
    }
    
    @Test
-   public void SamaaSanaaEiValitaKolmeaKertaaPerakkain() throws FileNotFoundException, IOException {
-       Arpoja arpoja = new Arpoja();
+   public void luoListaEiLuoTyhjaaListaa() throws FileNotFoundException, IOException {
+       
+       File testitiedosto = new File ("testitiedosto.txt");
        Tiedostonlukija lukija = new Tiedostonlukija();
-       ArrayList<String> lista = new ArrayList();
-       Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja(lukija);
-       Sanavarasto varasto = new Sanavarasto(arpoja);
-       File testitiedosto = new File("testitiedosto.txt");
+       Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja(lukija);
+       kirjaaja.lisaaSana(testitiedosto, "leijona");
+       ArrayList<String> lista = lukija.luoLista(testitiedosto);
+       assertEquals("leijona", lista.get(lista.size()-1));
        
-       kirjuri.lisaaSana(testitiedosto, "hevonen");
-       kirjuri.lisaaSana(testitiedosto, "aasi");
-       kirjuri.lisaaSana(testitiedosto, "zeebra");
        
-       for (int i = 0; i < 10; i++) {
-           
-         String s1 = varasto.valitseSatunnainenSana(lista);
-         String s2 = varasto.valitseSatunnainenSana(lista);
-         String s3 = varasto.valitseSatunnainenSana(lista);
-         
-         assertFalse("Sama sana ei saa tulla kolmea kertaa peräkkäin", s1.equals(s3) && s1.equals(s2) && s2.equals(s3));
-       }
    }
+   
      
 }

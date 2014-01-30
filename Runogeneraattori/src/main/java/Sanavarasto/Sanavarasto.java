@@ -79,7 +79,7 @@ public class Sanavarasto {
        
        
         String sana;
-        sana = lista.get(arpoja.SatunnainenLuku(lista.size()));
+        sana = lista.get(arpoja.SatunnainenLuku(lista.size()-1));
         
         return sana;
     }
