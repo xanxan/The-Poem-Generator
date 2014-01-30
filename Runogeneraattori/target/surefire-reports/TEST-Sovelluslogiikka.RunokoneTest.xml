@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.003" errors="4" skipped="0" tests="4" name="Sovelluslogiikka.RunokoneTest">
+<testsuite failures="0" time="0.003" errors="4" skipped="0" tests="4" name="sovelluslogiikka.RunokoneTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -45,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="fi"/>
     <property name="awt.toolkit" value="apple.awt.CToolkit"/>
@@ -64,15 +64,15 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0" classname="Sovelluslogiikka.RunokoneTest" name="kirjoitaRunoToimii">
+  <testcase time="0" classname="sovelluslogiikka.RunokoneTest" name="kirjoitaRunoToimii">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at Sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
-	at Sanavarasto.Lauseenrakentaja.Rakenne2(Lauseenrakentaja.java:46)
-	at Sovelluslogiikka.Runokone.sanat(Runokone.java:79)
-	at Sovelluslogiikka.Runokone.rivi(Runokone.java:62)
-	at Sovelluslogiikka.Runokone.sakeisto(Runokone.java:52)
-	at Sovelluslogiikka.Runokone.kirjoitaRuno(Runokone.java:37)
-	at Sovelluslogiikka.RunokoneTest.kirjoitaRunoToimii(RunokoneTest.java:37)
+	at sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
+	at sanavarasto.Lauseenrakentaja.Rakenne2(Lauseenrakentaja.java:46)
+	at sovelluslogiikka.Runokone.sanat(Runokone.java:79)
+	at sovelluslogiikka.Runokone.rivi(Runokone.java:62)
+	at sovelluslogiikka.Runokone.sakeisto(Runokone.java:52)
+	at sovelluslogiikka.Runokone.kirjoitaRuno(Runokone.java:37)
+	at sovelluslogiikka.RunokoneTest.kirjoitaRunoToimii(RunokoneTest.java:41)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -104,13 +104,13 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
   </testcase>
-  <testcase time="0" classname="Sovelluslogiikka.RunokoneTest" name="riviToimii">
+  <testcase time="0.001" classname="sovelluslogiikka.RunokoneTest" name="riviToimii">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at Sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
-	at Sanavarasto.Lauseenrakentaja.Rakenne1(Lauseenrakentaja.java:41)
-	at Sovelluslogiikka.Runokone.sanat(Runokone.java:82)
-	at Sovelluslogiikka.Runokone.rivi(Runokone.java:62)
-	at Sovelluslogiikka.RunokoneTest.riviToimii(RunokoneTest.java:54)
+	at sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
+	at sanavarasto.Lauseenrakentaja.Rakenne3(Lauseenrakentaja.java:52)
+	at sovelluslogiikka.Runokone.sanat(Runokone.java:76)
+	at sovelluslogiikka.Runokone.rivi(Runokone.java:62)
+	at sovelluslogiikka.RunokoneTest.riviToimii(RunokoneTest.java:58)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -142,12 +142,12 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
   </testcase>
-  <testcase time="0" classname="Sovelluslogiikka.RunokoneTest" name="sanatToimii">
+  <testcase time="0" classname="sovelluslogiikka.RunokoneTest" name="sanatToimii">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at Sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
-	at Sanavarasto.Lauseenrakentaja.Rakenne1(Lauseenrakentaja.java:41)
-	at Sovelluslogiikka.Runokone.sanat(Runokone.java:82)
-	at Sovelluslogiikka.RunokoneTest.sanatToimii(RunokoneTest.java:62)
+	at sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
+	at sanavarasto.Lauseenrakentaja.Rakenne1(Lauseenrakentaja.java:41)
+	at sovelluslogiikka.Runokone.sanat(Runokone.java:82)
+	at sovelluslogiikka.RunokoneTest.sanatToimii(RunokoneTest.java:66)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -179,14 +179,14 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
   </testcase>
-  <testcase time="0.001" classname="Sovelluslogiikka.RunokoneTest" name="sakeistoToimii">
+  <testcase time="0" classname="sovelluslogiikka.RunokoneTest" name="sakeistoToimii">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at Sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
-	at Sanavarasto.Lauseenrakentaja.Rakenne4(Lauseenrakentaja.java:58)
-	at Sovelluslogiikka.Runokone.sanat(Runokone.java:73)
-	at Sovelluslogiikka.Runokone.rivi(Runokone.java:62)
-	at Sovelluslogiikka.Runokone.sakeisto(Runokone.java:52)
-	at Sovelluslogiikka.RunokoneTest.sakeistoToimii(RunokoneTest.java:47)
+	at sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
+	at sanavarasto.Lauseenrakentaja.Rakenne3(Lauseenrakentaja.java:52)
+	at sovelluslogiikka.Runokone.sanat(Runokone.java:76)
+	at sovelluslogiikka.Runokone.rivi(Runokone.java:62)
+	at sovelluslogiikka.Runokone.sakeisto(Runokone.java:52)
+	at sovelluslogiikka.RunokoneTest.sakeistoToimii(RunokoneTest.java:51)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)

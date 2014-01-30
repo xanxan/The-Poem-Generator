@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.053" errors="5" skipped="0" tests="5" name="Sanavarasto.LauseenrakentajaTest">
+<testsuite failures="0" time="0.055" errors="5" skipped="0" tests="5" name="sanavarasto.LauseenrakentajaTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -45,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="fi"/>
     <property name="awt.toolkit" value="apple.awt.CToolkit"/>
@@ -64,11 +64,11 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.006" classname="Sanavarasto.LauseenrakentajaTest" name="Rakenne3ToimiiOikein">
+  <testcase time="0.006" classname="sanavarasto.LauseenrakentajaTest" name="Rakenne3ToimiiOikein">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at Sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
-	at Sanavarasto.Lauseenrakentaja.Rakenne3(Lauseenrakentaja.java:52)
-	at Sanavarasto.LauseenrakentajaTest.Rakenne3ToimiiOikein(LauseenrakentajaTest.java:44)
+	at sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
+	at sanavarasto.Lauseenrakentaja.Rakenne3(Lauseenrakentaja.java:52)
+	at sanavarasto.LauseenrakentajaTest.Rakenne3ToimiiOikein(LauseenrakentajaTest.java:46)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -100,11 +100,11 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
   </testcase>
-  <testcase time="0.001" classname="Sanavarasto.LauseenrakentajaTest" name="Rakenne2ToimiiOikein">
+  <testcase time="0" classname="sanavarasto.LauseenrakentajaTest" name="Rakenne2ToimiiOikein">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at Sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
-	at Sanavarasto.Lauseenrakentaja.Rakenne2(Lauseenrakentaja.java:46)
-	at Sanavarasto.LauseenrakentajaTest.Rakenne2ToimiiOikein(LauseenrakentajaTest.java:39)
+	at sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
+	at sanavarasto.Lauseenrakentaja.Rakenne2(Lauseenrakentaja.java:46)
+	at sanavarasto.LauseenrakentajaTest.Rakenne2ToimiiOikein(LauseenrakentajaTest.java:41)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -136,11 +136,11 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
   </testcase>
-  <testcase time="0.001" classname="Sanavarasto.LauseenrakentajaTest" name="Rakenne1ToimiiOikein">
+  <testcase time="0.001" classname="sanavarasto.LauseenrakentajaTest" name="Rakenne1ToimiiOikein">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at Sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
-	at Sanavarasto.Lauseenrakentaja.Rakenne1(Lauseenrakentaja.java:41)
-	at Sanavarasto.LauseenrakentajaTest.Rakenne1ToimiiOikein(LauseenrakentajaTest.java:33)
+	at sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
+	at sanavarasto.Lauseenrakentaja.Rakenne1(Lauseenrakentaja.java:41)
+	at sanavarasto.LauseenrakentajaTest.Rakenne1ToimiiOikein(LauseenrakentajaTest.java:35)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -172,11 +172,11 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
   </testcase>
-  <testcase time="0" classname="Sanavarasto.LauseenrakentajaTest" name="Rakenn5ToimiiOikein">
+  <testcase time="0.001" classname="sanavarasto.LauseenrakentajaTest" name="Rakenn5ToimiiOikein">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at Sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
-	at Sanavarasto.Lauseenrakentaja.Rakenne5(Lauseenrakentaja.java:66)
-	at Sanavarasto.LauseenrakentajaTest.Rakenn5ToimiiOikein(LauseenrakentajaTest.java:52)
+	at sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
+	at sanavarasto.Lauseenrakentaja.Rakenne5(Lauseenrakentaja.java:66)
+	at sanavarasto.LauseenrakentajaTest.Rakenn5ToimiiOikein(LauseenrakentajaTest.java:54)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -208,11 +208,11 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
   </testcase>
-  <testcase time="0.002" classname="Sanavarasto.LauseenrakentajaTest" name="Rakenne4ToimiiOikein">
+  <testcase time="0.001" classname="sanavarasto.LauseenrakentajaTest" name="Rakenne4ToimiiOikein">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at Sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
-	at Sanavarasto.Lauseenrakentaja.Rakenne4(Lauseenrakentaja.java:58)
-	at Sanavarasto.LauseenrakentajaTest.Rakenne4ToimiiOikein(LauseenrakentajaTest.java:48)
+	at sanavarasto.Sanavarasto.valitseSatunnainenSana(Sanavarasto.java:82)
+	at sanavarasto.Lauseenrakentaja.Rakenne4(Lauseenrakentaja.java:58)
+	at sanavarasto.LauseenrakentajaTest.Rakenne4ToimiiOikein(LauseenrakentajaTest.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
