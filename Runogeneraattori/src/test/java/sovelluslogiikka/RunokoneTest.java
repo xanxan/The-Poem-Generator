@@ -2,8 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sovelluslogiikka;
+package sovelluslogiikka;
 
+import sovelluslogiikka.Tiedostonkirjaaja;
+import sovelluslogiikka.Tiedostonlukija;
+import sovelluslogiikka.Runokone;
+import sovelluslogiikka.Arpoja;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;

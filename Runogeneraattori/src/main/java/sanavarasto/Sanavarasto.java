@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sanavarasto;
+package sanavarasto;
 
-import Sovelluslogiikka.Arpoja;
+import sovelluslogiikka.Arpoja;
 
 import java.util.ArrayList;
 

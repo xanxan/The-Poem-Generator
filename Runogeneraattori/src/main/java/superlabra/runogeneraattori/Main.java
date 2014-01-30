@@ -5,13 +5,13 @@
 package superlabra.runogeneraattori;
 
 
-import Sanavarasto.Lauseenrakentaja;
-import Sovelluslogiikka.Arpoja;
-import Sovelluslogiikka.Hallinto;
-import Sovelluslogiikka.Runokone;
-import Sovelluslogiikka.Syotteenlukija;
-import Sovelluslogiikka.Tiedostonkirjaaja;
-import Sovelluslogiikka.Tiedostonlukija;
+import sanavarasto.Lauseenrakentaja;
+import sovelluslogiikka.Arpoja;
+import sovelluslogiikka.Hallinto;
+import sovelluslogiikka.Runokone;
+import sovelluslogiikka.Syotteenlukija;
+import sovelluslogiikka.Tiedostonkirjaaja;
+import sovelluslogiikka.Tiedostonlukija;
 
 import java.io.File;
 import java.io.FileNotFoundException;

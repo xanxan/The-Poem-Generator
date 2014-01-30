@@ -39,15 +39,15 @@
             <version>2.6</version>
              <configuration>
                <targetClasses>
-                  <param>runogeneraattori.sanavarasto.*</param>
-                  <param>runogeneraattori.sovelluslogiikka.*</param>
-                  <param>runogeneraattori.superlabra.runogeneraattori.*</param>
+                  <param>sanavarasto.*</param>
+                  <param>sovelluslogiikka.*</param>
+                  <param>superlabra.runogeneraattori.*</param>
                   
                </targetClasses>
                <targetTests>
-                  <param>runogeneraattori.sanavarasto.*</param>
-                  <param>runogeneraattori.sovelluslogiikka.*</param>
-                  <param>runogeneraattori.superlabra.runogeneraattori.*</param>
+                  <param>sanavarasto.*</param>
+                  <param>sovelluslogiikka.*</param>
+                  <param>superlabra.runogeneraattori.*</param>
                </targetTests>
             </configuration>
         </plugin>

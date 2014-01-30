@@ -2,9 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sovelluslogiikka;
+package sovelluslogiikka;
 
-import Sanavarasto.Sanavarasto;
+import sovelluslogiikka.Tiedostonkirjaaja;
+import sovelluslogiikka.Tiedostonlukija;
+import sanavarasto.Sanavarasto;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
