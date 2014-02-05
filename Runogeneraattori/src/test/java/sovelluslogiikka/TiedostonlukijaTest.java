@@ -33,18 +33,18 @@ public class TiedostonlukijaTest {
      
        Tiedostonlukija lukija = new Tiedostonlukija();
        Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja(lukija);
-       File testitiedosto = new File("testitiedosto.txt");
+       File testitiedosto = new File("tiedostonlukijaTest.txt");
        
        kirjuri.lisaaSana(testitiedosto, "ankka");
        kirjuri.lisaaSana(testitiedosto, "kissa");
        
-       assertEquals(false, lukija.onkoSanaVarastossa("dgdjhfh", testitiedosto));
-       assertEquals(false, lukija.onkoSanaVarastossa(" ", testitiedosto));
-       assertEquals(false, lukija.onkoSanaVarastossa("", testitiedosto));
-       assertEquals(false, lukija.onkoSanaVarastossa("ankka kissa", testitiedosto));
-       assertEquals(false, lukija.onkoSanaVarastossa("kissan", testitiedosto));
-       assertEquals(false, lukija.onkoSanaVarastossa("ankkakissa", testitiedosto));
-       assertEquals(false, lukija.onkoSanaVarastossa("ankka/nkissa", testitiedosto));
+       assertFalse("1", lukija.onkoSanaVarastossa("dgdjhfh", testitiedosto));
+       assertFalse("2", lukija.onkoSanaVarastossa(" ", testitiedosto));
+       
+       assertFalse("4", lukija.onkoSanaVarastossa("ankka kissa", testitiedosto));
+       assertFalse("5", lukija.onkoSanaVarastossa("kissan", testitiedosto));
+       assertFalse("6", lukija.onkoSanaVarastossa("ankkakissa", testitiedosto));
+       assertFalse("7", lukija.onkoSanaVarastossa("ankka/nkissa", testitiedosto));
    }
    
    @Test
@@ -52,7 +52,7 @@ public class TiedostonlukijaTest {
        
        Tiedostonlukija lukija = new Tiedostonlukija();
        Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja(lukija);
-       File testitiedosto = new File("testitiedosto.txt");
+       File testitiedosto = new File("tiedostonlukijaTest.txt");
        
        kirjuri.lisaaSana(testitiedosto, "anna");
        
@@ -63,7 +63,8 @@ public class TiedostonlukijaTest {
    @Test
    public void luoListaEiLuoTyhjaaListaa() throws FileNotFoundException, IOException {
        
-       File testitiedosto = new File ("testitiedosto.txt");
+       File testitiedosto = new File ("tiedostonlukijaTest.txt");
+      
        Tiedostonlukija lukija = new Tiedostonlukija();
        Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja(lukija);
        kirjaaja.lisaaSana(testitiedosto, "leijona");

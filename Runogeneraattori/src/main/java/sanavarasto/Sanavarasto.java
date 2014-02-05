@@ -27,31 +27,59 @@ public class Sanavarasto {
     }
     
     public void setSubstantiivit(ArrayList<String> lista) {
+        if (lista == null) {
+            System.out.println("substantiivit null!");
+            return;
+        }
         this.substantiivit = lista;
     }
     
     public void setAdjektiivit(ArrayList<String> lista) {
+        if (lista == null) {
+            System.out.println("adjektiivit null!");
+            return;
+        }
         this.adjektiivit = lista;
     }
     
     public void setVerbit(ArrayList<String> lista) {
+        if (lista == null) {
+            System.out.println("verbit null!");
+            return;
+        }
         this.verbit = lista;
     }
     
     public void setNumeraalit(ArrayList<String> lista) {
+        if (lista == null) {
+            System.out.println("numeraalit null!");
+            return;
+        }
         this.numeraalit = lista;
     }
     
     public void setPartikkelit(ArrayList<String> lista) {
+        if (lista == null) {
+            System.out.println("partikkelit null!");
+            return;
+        }
         this.partikkelit = lista;
     }
     
     public void setPronominit(ArrayList<String> lista) {
+        if (lista == null) {
+            System.out.println("pronominit null!");
+            return;
+        }
         this.pronominit = lista;
     }
     
     
     public ArrayList<String> getSubstantiivit() {
+                if (substantiivit == null) {
+            System.out.println("substantiivit null!");
+            
+        }
         return this.substantiivit;
     }
     
@@ -76,6 +104,7 @@ public class Sanavarasto {
     }
     
     public String valitseSatunnainenSana(ArrayList<String> lista) {
+        
        
        
         String sana;

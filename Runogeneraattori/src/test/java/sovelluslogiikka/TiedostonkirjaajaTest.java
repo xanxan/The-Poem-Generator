@@ -29,24 +29,27 @@ public class TiedostonkirjaajaTest {
     @Test
     public void KirjaajaLisaaSanan() throws IOException {
        
-        File testitiedosto = new File("testitiedosto.txt");
+        File testitiedosto = new File("tiedostonkirjaajaTest.txt");
         Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja(this.etsija);
+        kirjuri.tyhjennaLista(testitiedosto);
         assertEquals(true, kirjuri.lisaaSana(testitiedosto, "marsu"));
         assertEquals(true, this.etsija.onkoSanaVarastossa("marsu", testitiedosto));
+        kirjuri.tyhjennaLista(testitiedosto);
     }
     
     @Test
     public void KirjaajaEiLisaaSanaaJokaLoytyyVarastosta() throws IOException {
         
-        File testitiedosto = new File("testitiedosto.txt");
+        File testitiedosto = new File("tiedostonkirjaajaTest.txt");
         Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja(this.etsija);
         kirjuri.lisaaSana(testitiedosto, "ankka");
         assertEquals(false, kirjuri.lisaaSana(testitiedosto, "ankka"));
+        kirjuri.tyhjennaLista(testitiedosto);
     }
     
     @Test
     public void KirjaajaTyhjentaaListan() throws IOException {
-        File testitiedosto = new File("testitiedosto.txt");
+        File testitiedosto = new File("tiedostonkirjaajaTest.txt");
         Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja(this.etsija);
         kirjuri.lisaaSana(testitiedosto, "helsinki");
         kirjuri.lisaaSana(testitiedosto, "tukholma");
@@ -56,10 +59,13 @@ public class TiedostonkirjaajaTest {
     
     @Test
     public void KirjaajaPoistaaSanan() throws IOException {
-        File testitiedosto = new File("testitiedosto.txt");
+        File testitiedosto = new File("tiedostonkirjaajaTest.txt");
         Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja(this.etsija);
         kirjuri.lisaaSana(testitiedosto, "helmi");
         assertTrue(kirjuri.poistaSana(testitiedosto, "helmi"));
+        kirjuri.tyhjennaLista(testitiedosto);
     }
+    
+    
            
 }

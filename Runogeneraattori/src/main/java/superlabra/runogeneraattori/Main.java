@@ -18,6 +18,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import java.util.Scanner;
+import sanavarasto.Sanavarasto;
 
 
 /**
@@ -31,12 +32,16 @@ public class Main {
      */
     public static void main(String[] args) throws FileNotFoundException, IOException {
         
-       Tiedostonlukija lukija = new Tiedostonlukija();
-      Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja(lukija);
+      
       Arpoja arpoja = new Arpoja();
-       Hallinto hallinto = new Hallinto(lukija, kirjaaja, arpoja);
-       hallinto.alustaOhjelma();
-       Lauseenrakentaja rakentaja = new Lauseenrakentaja(arpoja);
-        System.out.println(rakentaja.Rakenne1());
+      Tiedostonlukija lukija = new Tiedostonlukija();
+      Sanavarasto varasto = new Sanavarasto(arpoja);
+      File adjektiivit = new File("tiedostonkirjaajaTest.txt");
+        Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja(lukija);
+        Hallinto hallinto = new Hallinto(lukija, kirjaaja, arpoja);
+        File runo = hallinto.kaynnistaRunokone();
+        lukija.tulostaTiedosto(runo);
+        
+        
     }
 }

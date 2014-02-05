@@ -51,7 +51,7 @@ public class ArpojaTest {
     }
     
     @Test
-    public void ArpojaEiTulostaSamaaLukuaKolmeaKertaaPerakkain() {
+    public void ArpojaEiTulostaSamaaLukuaViittaKertaaPerakkain() {
         
         Arpoja arpoja = new Arpoja();
         
@@ -60,9 +60,12 @@ public class ArpojaTest {
             int l1 = arpoja.SatunnainenLuku(10);
             int l2 = arpoja.SatunnainenLuku(10);
             int l3 = arpoja.SatunnainenLuku(10);
+            int l4 = arpoja.SatunnainenLuku(10);
+            int l5 = arpoja.SatunnainenLuku(10);
         
-            assertFalse("Arpoja ei saa tulostaa samaa lukua kolmea kertaa "
-                    + "peräkkäin", l1 == l2 && l1 == l3 && l2 == l3);
+            assertFalse("Arpoja ei saa tulostaa samaa lukua neljaa kertaa "
+                    + "peräkkäin", l1 == l2 && l1 == l3 && l2 == l3 && l4 == l1 && l4 == l2 && l4 == l3
+                    && l5 == l1 && l5 == l2 && l5 == l3 && l5 == l4);
         }
     }
    

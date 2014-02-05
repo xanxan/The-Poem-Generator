@@ -25,9 +25,9 @@ public class Lauseenrakentaja {
     private ArrayList<String>  numeraalit;
     private ArrayList<String>  pronominit;
     
-    public Lauseenrakentaja(Arpoja arpoja) {
+    public Lauseenrakentaja(Arpoja arpoja, Sanavarasto varasto) {
        
-        this.varasto = new Sanavarasto(arpoja);
+        this.varasto = varasto;
         this.adjektiivit = this.varasto.getAdjektiivit();
         this.numeraalit = this.varasto.getNumeraalit();
         this.substantiivit = this.varasto.getSubstantiivit();
@@ -52,7 +52,7 @@ public class Lauseenrakentaja {
         String rakenne = this.varasto.valitseSatunnainenSana(pronominit);
         rakenne += " " + this.varasto.valitseSatunnainenSana(verbit);
         rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit);
-        return"";
+        return rakenne;
     }
     public String Rakenne4() throws FileNotFoundException {
         String rakenne = this.varasto.valitseSatunnainenSana(numeraalit);

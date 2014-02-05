@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import sanavarasto.Sanavarasto;
 
 /**
  *
@@ -16,16 +17,20 @@ import java.io.IOException;
  */
 public class Runokone {
     private Arpoja arpoja;
-    private Tiedostonkirjaaja kirjaaja;
+    private Sanavarasto varasto;
     private Lauseenrakentaja rakentaja;
     private FileWriter kirjoittaja;
     
     
-    public Runokone(Arpoja arpoja, Tiedostonkirjaaja kirjaaja, Tiedostonlukija lukija) {
+    public Runokone(Arpoja arpoja, Sanavarasto varasto) {
         this.arpoja = arpoja;
-        this.kirjaaja = kirjaaja;
-        this.rakentaja =  new Lauseenrakentaja(arpoja);
+        this.varasto = varasto;
+        this.rakentaja =  new Lauseenrakentaja(arpoja, varasto);
         
+    }
+    
+    public Lauseenrakentaja getRakentaja() {
+        return rakentaja;
     }
     
     public File kirjoitaRuno() throws IOException {

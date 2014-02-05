@@ -19,16 +19,28 @@ public class Hallinto {
     private Tiedostonlukija lukija;
     private Tiedostonkirjaaja kirjaaja;
     private Sanavarasto varasto;
+    private Runokone kone;
     
-    public Hallinto(Tiedostonlukija lukija, Tiedostonkirjaaja kirjaaja, Arpoja arpoja) {
+    public Hallinto(Tiedostonlukija lukija, Tiedostonkirjaaja kirjaaja, Arpoja arpoja) throws FileNotFoundException {
         this.kirjaaja = kirjaaja;
        
         this.lukija = lukija;
         this.varasto = new Sanavarasto(arpoja); 
+        this.alustaOhjelma();
+        this.kone = new Runokone(arpoja, varasto);
     }
     
     public void lisaaUusiSana(File tiedosto, String sana) throws IOException {
         this.kirjaaja.lisaaSana(tiedosto, sana);
+    }
+    
+    public Sanavarasto getVarasto() {
+        
+        return varasto;
+    }
+    
+    public Runokone getKone() {
+        return kone;
     }
     
     public void alustaOhjelma() throws FileNotFoundException {
@@ -52,5 +64,10 @@ public class Hallinto {
         this.varasto.setPronominit(pron);
         this.varasto.setSubstantiivit(subs);
         this.varasto.setVerbit(verb);
+    }
+    
+    public File kaynnistaRunokone() throws IOException {
+       File runo = kone.kirjoitaRuno();
+       return runo;
     }
 }

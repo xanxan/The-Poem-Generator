@@ -64,7 +64,7 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
+  <testcase time="0" classname="sovelluslogiikka.ArpojaTest" name="ArpojaEiTulostaSamaaLukuaViittaKertaaPerakkain"/>
   <testcase time="0" classname="sovelluslogiikka.ArpojaTest" name="ArpojaEiTulostaYlarajaaTaiSitaSuurempaaLukua"/>
   <testcase time="0" classname="sovelluslogiikka.ArpojaTest" name="ArpojaEiTulostaNegatiivistLukua"/>
-  <testcase time="0" classname="sovelluslogiikka.ArpojaTest" name="ArpojaEiTulostaSamaaLukuaKolmeaKertaaPerakkain"/>
 </testsuite>

@@ -17,7 +17,7 @@ public class Tiedostonkirjaaja {
   
     private FileWriter kirjoittaja;
     private Tiedostonlukija lukija;
-    private Runokone kone;
+   
     
     public Tiedostonkirjaaja(Tiedostonlukija lukija) {
         this.lukija = lukija;

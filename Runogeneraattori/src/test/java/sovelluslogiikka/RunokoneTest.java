@@ -4,41 +4,36 @@
  */
 package sovelluslogiikka;
 
-import sovelluslogiikka.Tiedostonkirjaaja;
-import sovelluslogiikka.Tiedostonlukija;
-import sovelluslogiikka.Runokone;
-import sovelluslogiikka.Arpoja;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+
+
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  *
  * @author anna
  */
 public class RunokoneTest {
-    private Runokone kone;
+    private Hallinto hallinto;
     private Arpoja arpoja;
     private Tiedostonkirjaaja kirjaaja;
     private Tiedostonlukija lukija;
     
-    public RunokoneTest() {
-        this.arpoja = new Arpoja();
+    
+    public RunokoneTest() throws FileNotFoundException {
+         this.arpoja = new Arpoja();
         this.lukija = new Tiedostonlukija();
         this.kirjaaja = new Tiedostonkirjaaja(lukija);
-        this.kone = new Runokone(arpoja, kirjaaja, lukija);
+        this.hallinto = new Hallinto(lukija, kirjaaja, arpoja);
     }
     
     @Test
     
     public void kirjoitaRunoToimii() throws IOException {
-        File runo = this.kone.kirjoitaRuno();
+        File runo = this.hallinto.getKone().kirjoitaRuno();
         assertTrue(runo.canRead());
         assertTrue(runo.exists());
         assertTrue(runo.canWrite());
@@ -48,22 +43,22 @@ public class RunokoneTest {
     
     @Test
     public void sakeistoToimii() throws FileNotFoundException {
-        String sakeisto = this.kone.sakeisto();
+        String sakeisto = this.hallinto.getKone().sakeisto();
         assertFalse(sakeisto.isEmpty());
-        assertTrue(sakeisto.length() > 3);
+        assertTrue(sakeisto.length() > 0);
     }
     
     @Test
     public void riviToimii() throws FileNotFoundException {
-        String rivi = this.kone.rivi();
-        assertFalse(rivi.isEmpty());
-        assertTrue(rivi.length() > 3);
+        String rivi = this.hallinto.getKone().rivi();
+        assertFalse("rivi ei saa olla tyhjä", rivi.isEmpty());
+        assertTrue(" rivin on oltava vähintään kahden merkin pituinen", rivi.length() > 1);
         
     }
     
     @Test
     public void sanatToimii() throws FileNotFoundException {
-        String sanat = this.kone.sanat(1);
+        String sanat = this.hallinto.getKone().sanat(1);
         assertFalse(sanat.isEmpty());
         assertTrue(sanat.length() > 0);
     }
