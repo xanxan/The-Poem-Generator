@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 /**
+ * Luokan tehtävänä on koota satunnaisesti valitut sanat yhteen.
  *
  * @author anna
  */
@@ -40,12 +41,23 @@ public class Lauseenrakentaja {
         this.monikko = this.varasto.getMonikko();
         
     }
-    
+    /**
+     *Metodi lisää lauserakenteeseen verbin.
+     * 
+     * 
+     * 
+     */
     public String Rakenne1() throws FileNotFoundException {
         String rakenne = this.varasto.valitseSatunnainenSana(verbit) + "\n";
         
         return rakenne;
     }
+    /**
+     *Metodi lisää lauserakenteeseen verbin ja pronominin.
+     * 
+     * 
+     * 
+     */
     public String Rakenne2() throws FileNotFoundException {
         String rakenne = this.varasto.valitseSatunnainenSana(verbit);
         rakenne += " " + this.varasto.valitseSatunnainenSana(pronominit) + "\n";
@@ -53,6 +65,13 @@ public class Lauseenrakentaja {
        
         return rakenne;
     }
+    /**
+     *Metodi lisää lauserakenteeseen pronominin ja verbin, sekä pronominista
+     *riippuen preposition ja monikon tai pelkän substantiivin.
+     * 
+     * 
+     * 
+     */
     public String Rakenne3() throws FileNotFoundException {
         String rakenne = this.varasto.valitseSatunnainenSana(pronominit);
         if (rakenne.equals("he") || rakenne.equals(("she")) || rakenne.equals("it")
@@ -66,6 +85,14 @@ public class Lauseenrakentaja {
         }
         return rakenne;
     }
+    /**
+     * Metodi lisää lauserakenteeseen numeraalin ja siitä riippuen joko 
+     * substantiivin, verbin preposition ja substantiivin tai monikon, verbin,
+     * preposition ja monikon.
+     * 
+     * 
+     * 
+     */
     public String Rakenne4() throws FileNotFoundException {
         String rakenne = this.varasto.valitseSatunnainenSana(numeraalit);
         if (rakenne.contains("one")) {
@@ -81,7 +108,14 @@ public class Lauseenrakentaja {
         }
         return rakenne;
     }
-    public String Rakenne5() throws FileNotFoundException {
+    /**
+     * Metodi lisää lauserakenteeseen partikkelin, pronominin, verbin, 
+     * adjektiivin ja substantiivin.
+     * 
+     * 
+     * 
+     */
+    public String Rakenne5() {
         String rakenne = this.varasto.valitseSatunnainenSana(partikkelit);
         rakenne += " " + this.varasto.valitseSatunnainenSana(pronominit);
         rakenne += " " + this.varasto.valitseSatunnainenSana(verbit);
@@ -93,11 +127,28 @@ public class Lauseenrakentaja {
         
         return rakenne;
     }
-//    public String Rakenne6() {
-//        return"";
-//    }
-//    public String Rakenne7() {
-//        return"";
-//    }
+    /**
+     * Metodi lisää lauserakenteeseen adjektiivin ja substantiivin.
+     * 
+     * 
+     * 
+     */
+    public String Rakenne6() {
+        String rakenne = this.varasto.valitseSatunnainenSana(adjektiivit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit) + "\n";
+        return rakenne;
+    }
+    /**
+     * Metodi lisää lauserakenteeseen verbin, preposition ja pronominin.
+     * 
+     * 
+     * 
+     */
+    public String Rakenne7() {
+        String rakenne = this.varasto.valitseSatunnainenSana(verbit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(prepositiot);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(pronominit) + "\n";
+        return rakenne;
+    }
     
 }

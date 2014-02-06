@@ -10,7 +10,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- *
+ * Tästä luokasta käsin suoritetaan tiedostoihin tehtävät muutokset.
+ * 
+ * 
  * @author anna
  */
 public class Tiedostonkirjaaja {
@@ -23,7 +25,12 @@ public class Tiedostonkirjaaja {
         this.lukija = lukija;
        
     }
-    
+    /**
+     * Metodi lisää sanan haluttuun tiedostoon.
+     * 
+     * 
+     * 
+     */
     public boolean lisaaSana(File tiedosto, String sana) throws IOException {
          if (!this.lukija.onkoSanaVarastossa(sana, tiedosto)) {
               this.kirjoittaja = new FileWriter(tiedosto, true);
@@ -33,6 +40,12 @@ public class Tiedostonkirjaaja {
          }
          return false;
     }
+    /**
+     * Metodi poistaa halutun sanan annetusta tiedostosta.
+     * 
+     * 
+     * 
+     */
     
     public boolean poistaSana(File tiedosto, String sana) throws FileNotFoundException, IOException {
         if (this.lukija.onkoSanaVarastossa(sana, tiedosto)) {
@@ -42,6 +55,12 @@ public class Tiedostonkirjaaja {
         }
         return false;
     }
+    /**
+     * Metodi poistaa kaiken sisällön annetusta tiedostosta.
+     * 
+     * 
+     * 
+     */
     
     public boolean tyhjennaLista(File tiedosto) throws IOException {
             this.kirjoittaja = new FileWriter(tiedosto, true);

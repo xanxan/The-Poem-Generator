@@ -38,7 +38,7 @@ public class ArpojaTest {
     }
     
     @Test
-    public void ArpojaEiTulostaNegatiivistLukua() {
+    public void ArpojaEiTulostaNegatiivistaLukua() {
         
         Arpoja arpoja = new Arpoja();
         

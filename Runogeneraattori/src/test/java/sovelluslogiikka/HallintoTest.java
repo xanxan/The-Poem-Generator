@@ -56,4 +56,13 @@ public class HallintoTest {
         assertTrue(hallinto.getVarasto().getVerbit().size() > 0);
         
     }
+    
+    @Test
+    public void kaynnistaRunokoneToimii() throws IOException {
+        File runo = hallinto.kaynnistaRunokone();
+        
+        assertTrue(runo.length() != 0);
+        assertTrue(runo.exists());
+        assertTrue(runo.isFile());
+    }
 }

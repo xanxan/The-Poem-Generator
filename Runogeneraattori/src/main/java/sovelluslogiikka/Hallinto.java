@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
+ * Luokan päätehtäviä ovat ohjelman alustaminen ja runokoneen käynnistäminen.
+ * Muita tehtäviä ovat taustasiällön hallinnointi.
+ * 
  *
  * @author anna
  */
@@ -29,7 +32,13 @@ public class Hallinto {
         this.alustaOhjelma();
         this.kone = new Runokone(arpoja, varasto);
     }
-    
+    /**
+     * Metodi lisää uuden sanan haluttuun tiedostoon kutsumalla
+     * metodia Tiedostonkirjaaja-luokasta ja antamalla sille tarvittavat parametrit. 
+     * 
+     * 
+     * 
+     */
     public void lisaaUusiSana(File tiedosto, String sana) throws IOException {
         this.kirjaaja.lisaaSana(tiedosto, sana);
     }
@@ -42,7 +51,13 @@ public class Hallinto {
     public Runokone getKone() {
         return kone;
     }
-    
+    /**
+     * Metodi alustaa ohjelman toimintakuntoon listaamalla annettujen
+     * tiedostojen sanalistat ja lisäämällä ne sanavarastoon.
+     * 
+     * 
+     * 
+     */
     public void alustaOhjelma() throws FileNotFoundException {
         File adjektiivit = new File ("adjektiivit.txt");
         File substantiivit = new File ("substantiivit.txt");
@@ -71,7 +86,13 @@ public class Hallinto {
         this.varasto.setPrepositiot(pre);
         this.varasto.setMonikko(mon);
     }
-    
+    /**
+     * Metodi käynnistää runokoneen ja palauttaa metodin kirjoitaRuno laatiman
+     * runon.
+     * 
+     * 
+     * 
+     */
     public File kaynnistaRunokone() throws IOException {
        File runo = kone.kirjoitaRuno();
        return runo;

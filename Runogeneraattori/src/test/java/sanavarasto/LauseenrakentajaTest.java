@@ -43,7 +43,7 @@ public class LauseenrakentajaTest {
     
    @Test
    public void Rakenne1ToimiiOikein() throws FileNotFoundException {
-       assertTrue(this.hallinto.getVarasto().getVerbit().contains(this.hallinto.getKone().getRakentaja().Rakenne1()));
+       assertFalse(this.hallinto.getKone().getRakentaja().Rakenne1().isEmpty());
        
    }
    
@@ -62,7 +62,15 @@ public class LauseenrakentajaTest {
        assertFalse(this.hallinto.getKone().getRakentaja().Rakenne4().isEmpty());
    }
    @Test
-   public void Rakenn5ToimiiOikein() throws FileNotFoundException {
+   public void Rakenne5ToimiiOikein() throws FileNotFoundException {
        assertFalse(this.hallinto.getKone().getRakentaja().Rakenne5().isEmpty());
+   }
+   @Test
+   public void Rakenne6ToimiiOikein() throws FileNotFoundException {
+       assertFalse(this.hallinto.getKone().getRakentaja().Rakenne6().isEmpty());
+   }
+   @Test
+   public void Rakenne7ToimiiOikein() throws FileNotFoundException {
+       assertFalse(this.hallinto.getKone().getRakentaja().Rakenne6().isEmpty());
    }
 }

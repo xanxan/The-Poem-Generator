@@ -10,7 +10,9 @@ import java.util.*;
 
 
 /**
- *
+ *Luokan tehtävänä on lukea ja etsiä tiedostoista tarvittavat tiedot.
+ * 
+ * 
  * @author anna
  */
 public class Tiedostonlukija {
@@ -21,7 +23,12 @@ public class Tiedostonlukija {
         
       
     }
-    
+    /**
+     * Metodi tulostaa sille annetun tiedoston sisällön. 
+     * 
+     * 
+     * 
+     */
     public void tulostaTiedosto(File tiedosto) throws FileNotFoundException {
         Scanner lukija = new Scanner(tiedosto);
         while (lukija.hasNextLine()) {
@@ -29,7 +36,13 @@ public class Tiedostonlukija {
         }
         lukija.close();
     }
-    
+    /**
+     * Metodi tarkastaa löytyykö sille parametrina annettu sana halutusta
+     * tiedostosta ja palauttaa tulosta vastaavan totuusarvon.
+     * 
+     * 
+     * 
+     */
     public boolean onkoSanaVarastossa(String sana, File tiedosto) throws FileNotFoundException {
         Scanner lukija = new Scanner(tiedosto); 
         while (lukija.hasNextLine()) {
@@ -43,9 +56,14 @@ public class Tiedostonlukija {
         return false;
     }
     
-    
-    
-    public ArrayList<String> luoLista(File tiedosto) throws FileNotFoundException {
+    /**
+     * Metodi luo Array -tyyppisen listan annetun tiedoston sisällöstä ja 
+     * palauttaa sen.
+     * 
+     * 
+     * 
+     */
+     public ArrayList<String> luoLista(File tiedosto) throws FileNotFoundException {
         Scanner lukija = new Scanner(tiedosto);
         ArrayList<String> lista = new ArrayList();
         while (lukija.hasNextLine()) {

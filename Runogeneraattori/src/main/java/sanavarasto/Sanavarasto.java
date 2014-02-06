@@ -9,7 +9,9 @@ import sovelluslogiikka.Arpoja;
 import java.util.ArrayList;
 
 /**
- *
+ *Luokan tehtävänä on säilyttää annettuja sanalistoja ja poimia sanoja 
+ *listoista sattumanvaraisesti.
+ * 
  * @author anna
  */
 public class Sanavarasto {
@@ -128,13 +130,18 @@ public class Sanavarasto {
     public ArrayList<String> getMonikko() {
         return this.monikko;
     }
-    
+    /**
+     *Metodi valitsee satunnaisesti sanan annetusta listasta ja palauttaa sen.
+     * 
+     * 
+     * 
+     */
     public String valitseSatunnainenSana(ArrayList<String> lista) {
         
        
        
         String sana;
-        sana = lista.get(arpoja.SatunnainenLuku(lista.size()-1));
+        sana = lista.get(arpoja.SatunnainenLuku(lista.size()));
         
         return sana;
     }
