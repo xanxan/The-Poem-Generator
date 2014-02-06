@@ -24,6 +24,8 @@ public class Lauseenrakentaja {
     private ArrayList<String>  partikkelit;
     private ArrayList<String>  numeraalit;
     private ArrayList<String>  pronominit;
+    private ArrayList<String>  prepositiot;
+    private ArrayList<String>  monikko;
     
     public Lauseenrakentaja(Arpoja arpoja, Sanavarasto varasto) {
        
@@ -34,40 +36,60 @@ public class Lauseenrakentaja {
         this.verbit = this.varasto.getVerbit();
         this.pronominit = this.varasto.getPronominit();
         this.partikkelit = this.varasto.getPartikkelit();
+        this.prepositiot = this.varasto.getPrepositiot();
+        this.monikko = this.varasto.getMonikko();
         
     }
     
     public String Rakenne1() throws FileNotFoundException {
-        String rakenne = this.varasto.valitseSatunnainenSana(verbit);
+        String rakenne = this.varasto.valitseSatunnainenSana(verbit) + "\n";
         
         return rakenne;
     }
     public String Rakenne2() throws FileNotFoundException {
-        String rakenne = this.varasto.valitseSatunnainenSana(partikkelit);
-        rakenne += " " + this.varasto.valitseSatunnainenSana(verbit);
+        String rakenne = this.varasto.valitseSatunnainenSana(verbit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(pronominit) + "\n";
         
+       
         return rakenne;
     }
     public String Rakenne3() throws FileNotFoundException {
         String rakenne = this.varasto.valitseSatunnainenSana(pronominit);
-        rakenne += " " + this.varasto.valitseSatunnainenSana(verbit);
-        rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit);
+        if (rakenne.equals("he") || rakenne.equals(("she")) || rakenne.equals("it")
+           || rakenne.equals("what") || rakenne.equals("who")) {
+            rakenne += " is " + this.varasto.valitseSatunnainenSana(verbit) + "ing";
+            rakenne += " " + this.varasto.valitseSatunnainenSana(prepositiot);
+            rakenne += " " + this.varasto.valitseSatunnainenSana(monikko);
+        } else {
+            rakenne += " " + this.varasto.valitseSatunnainenSana(verbit);
+            rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit) + "\n";
+        }
         return rakenne;
     }
     public String Rakenne4() throws FileNotFoundException {
         String rakenne = this.varasto.valitseSatunnainenSana(numeraalit);
-        rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit);
-        rakenne += " " + this.varasto.valitseSatunnainenSana(verbit);
-        rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit);
-        
+        if (rakenne.contains("one")) {
+            rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit);
+            rakenne += " " + this.varasto.valitseSatunnainenSana(verbit) + "s";
+            rakenne += " " + this.varasto.valitseSatunnainenSana(prepositiot);
+            rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit);        
+        } else {
+            rakenne += " " + this.varasto.valitseSatunnainenSana(monikko);
+            rakenne += " " + this.varasto.valitseSatunnainenSana(verbit);
+            rakenne += " " + this.varasto.valitseSatunnainenSana(prepositiot);
+            rakenne += " " + this.varasto.valitseSatunnainenSana(monikko) + "\n";
+        }
         return rakenne;
     }
     public String Rakenne5() throws FileNotFoundException {
         String rakenne = this.varasto.valitseSatunnainenSana(partikkelit);
         rakenne += " " + this.varasto.valitseSatunnainenSana(pronominit);
         rakenne += " " + this.varasto.valitseSatunnainenSana(verbit);
+        if (rakenne.contains("he") || rakenne.contains(("she")) || rakenne.contains("it")) {
+            rakenne += "s";
+        } 
         rakenne += " " + this.varasto.valitseSatunnainenSana(adjektiivit);
-        rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit) + "\n";
         
         return rakenne;
     }

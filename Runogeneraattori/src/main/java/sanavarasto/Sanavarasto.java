@@ -19,6 +19,8 @@ public class Sanavarasto {
     private ArrayList<String> numeraalit;
     private ArrayList<String> partikkelit;
     private ArrayList<String> pronominit;
+    private ArrayList<String> prepositiot;
+    private ArrayList<String> monikko;
     private Arpoja arpoja;
           
     public Sanavarasto(Arpoja arpoja) {
@@ -74,6 +76,22 @@ public class Sanavarasto {
         this.pronominit = lista;
     }
     
+    public void setPrepositiot(ArrayList<String> lista) {
+        if (lista == null) {
+            System.out.println("prepositiot null!");
+            return;
+        }
+        this.prepositiot = lista;
+    }
+    
+    public void setMonikko(ArrayList<String> lista) {
+        if (lista == null) {
+            System.out.println("monikko null!");
+            return;
+        }
+        this.monikko = lista;
+    }
+    
     
     public ArrayList<String> getSubstantiivit() {
                 if (substantiivit == null) {
@@ -101,6 +119,14 @@ public class Sanavarasto {
     
     public ArrayList<String> getPronominit() {
         return this.pronominit;
+    }
+    
+    public ArrayList<String> getPrepositiot() {
+        return this.prepositiot;
+    }
+    
+    public ArrayList<String> getMonikko() {
+        return this.monikko;
     }
     
     public String valitseSatunnainenSana(ArrayList<String> lista) {

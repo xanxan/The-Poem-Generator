@@ -23,7 +23,7 @@ himself
 herself
 itself
 we
-for us
+us
 our
 ours
 ourselves
@@ -33,5 +33,3 @@ them
 their
 theirs 
 themselves
-what
-who

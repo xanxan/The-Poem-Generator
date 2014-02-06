@@ -535,7 +535,7 @@ surround
 suspect
 suspend
 switch
-talk about
+talk
 tame
 tap
 taste

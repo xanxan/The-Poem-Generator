@@ -24,8 +24,9 @@ though
 till
 unless
 until
+what
 when
 whenever
 wherever
 whether
-while
+while 

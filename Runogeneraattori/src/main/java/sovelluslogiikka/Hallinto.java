@@ -50,6 +50,8 @@ public class Hallinto {
         File numeraalit = new File ("numeraalit.txt");
         File pronominit = new File ("pronominit.txt");
         File partikkelit = new File ("partikkelit.txt");
+        File monikko = new File ("monikko.txt");
+        File prepositiot = new File ("prepositiot.txt");
         
         ArrayList<String> adj = this.lukija.luoLista(adjektiivit);
         ArrayList<String> subs = this.lukija.luoLista(substantiivit);
@@ -57,6 +59,8 @@ public class Hallinto {
         ArrayList<String> part = this.lukija.luoLista(partikkelit);
         ArrayList<String> pron = this.lukija.luoLista(pronominit);
         ArrayList<String> num = this.lukija.luoLista(numeraalit);
+        ArrayList<String> mon = this.lukija.luoLista(monikko);
+        ArrayList<String> pre = this.lukija.luoLista(prepositiot);
        
         this.varasto.setAdjektiivit(adj);
         this.varasto.setNumeraalit(num);
@@ -64,6 +68,8 @@ public class Hallinto {
         this.varasto.setPronominit(pron);
         this.varasto.setSubstantiivit(subs);
         this.varasto.setVerbit(verb);
+        this.varasto.setPrepositiot(pre);
+        this.varasto.setMonikko(mon);
     }
     
     public File kaynnistaRunokone() throws IOException {
