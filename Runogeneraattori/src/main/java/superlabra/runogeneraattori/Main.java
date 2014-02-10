@@ -20,6 +20,8 @@ import java.io.IOException;
 import java.util.Scanner;
 import sanavarasto.Sanavarasto;
 
+      import javax.swing.SwingUtilities;
+import kayttoliittyma.GraafinenKayttoliittyma;
 
 /**
  *
@@ -33,17 +35,17 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException {
         
       
-      Arpoja arpoja = new Arpoja();
-      Tiedostonlukija lukija = new Tiedostonlukija();
-      Sanavarasto varasto = new Sanavarasto(arpoja);
-      File adjektiivit = new File("adjektiivit.txt");
-        Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja(lukija);
-        Hallinto hallinto = new Hallinto(lukija, kirjaaja, arpoja);
-        File runo = hallinto.kaynnistaRunokone();
-        lukija.tulostaTiedosto(runo);
-        kirjaaja.tyhjennaLista(runo);
+
+
+
+   
+        GraafinenKayttoliittyma kayttoliittyma = new GraafinenKayttoliittyma();
+        SwingUtilities.invokeLater(kayttoliittyma);
+    
+}
+     
         
         
         
-    }
+    
 }

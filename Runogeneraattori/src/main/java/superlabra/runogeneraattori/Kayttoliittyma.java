@@ -29,13 +29,13 @@ public class Kayttoliittyma {
      * 
      * 
      */
-    public void kaynnista() throws FileNotFoundException, IOException {
-        Arpoja arpoja = new Arpoja();
-        Tiedostonlukija lukija = new Tiedostonlukija();
-        Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja(lukija);
-        Hallinto hallinto = new Hallinto(lukija, kirjaaja, arpoja);
-        
-        File runo = hallinto.kaynnistaRunokone();
-    }
+//    public void kaynnista() throws FileNotFoundException, IOException {
+//        Arpoja arpoja = new Arpoja();
+//        Tiedostonlukija lukija = new Tiedostonlukija();
+//        Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja(lukija);
+//        Hallinto hallinto = new Hallinto(lukija, kirjaaja, arpoja);
+//        
+//        File runo = hallinto.kaynnistaRunokone();
+//    }
     
 }
