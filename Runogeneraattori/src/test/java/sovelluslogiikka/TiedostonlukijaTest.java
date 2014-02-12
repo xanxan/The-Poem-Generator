@@ -57,7 +57,7 @@ public class TiedostonlukijaTest {
        kirjuri.lisaaSana(testitiedosto, "anna");
        
        assertEquals(true,lukija.onkoSanaVarastossa("anna", testitiedosto));
-       
+       kirjuri.tyhjennaLista(testitiedosto);
    }
    
    @Test
@@ -70,8 +70,20 @@ public class TiedostonlukijaTest {
        kirjaaja.lisaaSana(testitiedosto, "leijona");
        ArrayList<String> lista = lukija.luoLista(testitiedosto);
        assertEquals("leijona", lista.get(lista.size()-1));
+       kirjaaja.tyhjennaLista(testitiedosto);
        
-       
+   }
+   
+   @Test
+   public void tulostaTiedostoToimii() throws IOException {
+       File testitiedosto = new File ("tiedostonlukijaTest.txt");
+       Tiedostonlukija lukija = new Tiedostonlukija();
+       Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja(lukija);
+       kirjaaja.lisaaSana(testitiedosto, "kissa");
+       String tiedosto = lukija.tulostaTiedosto(testitiedosto);
+       assertEquals(tiedosto, "kissa");
+       assertFalse(tiedosto.isEmpty());
+       kirjaaja.tyhjennaLista(testitiedosto);
    }
    
      

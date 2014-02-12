@@ -4,11 +4,10 @@
  */
 package sovelluslogiikka;
 
-import sanavarasto.Lauseenrakentaja;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import sanavarasto.Lauseenrakentaja;
 import sanavarasto.Sanavarasto;
 
 /**
@@ -44,17 +43,14 @@ public class Runokone {
      * 
      * 
      */
-    public File kirjoitaRuno() throws IOException {
-        File runo = new File("runo.txt");
+    public String kirjoitaRuno() throws IOException {
+
         int sakeistoja = 1 + arpoja.SatunnainenLuku(6);
         
-        this.kirjoittaja = new FileWriter(runo, true);
-            for (int i = 0; i < sakeistoja; i++) {
-                kirjoittaja.write(this.sakeisto() + '\n');
-            }
-            kirjoittaja.close();
-            
-           
+        String runo = "";
+         for (int i = 0; i < sakeistoja; i++) {
+              runo += this.sakeisto() + '\n';
+          } 
         
         return runo;
         

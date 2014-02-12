@@ -4,11 +4,11 @@
  */
 package sovelluslogiikka;
 
-import sanavarasto.Sanavarasto;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import sanavarasto.Sanavarasto;
 
 /**
  * Luokan päätehtäviä ovat ohjelman alustaminen ja runokoneen käynnistäminen.
@@ -48,8 +48,16 @@ public class Hallinto {
         return varasto;
     }
     
+    public Tiedostonlukija getLukija() {
+        return this.lukija;
+    }
+    
     public Runokone getKone() {
         return kone;
+    }
+    
+    public Tiedostonkirjaaja getKirjaaja() {
+        return kirjaaja;
     }
     /**
      * Metodi alustaa ohjelman toimintakuntoon listaamalla annettujen
@@ -58,7 +66,7 @@ public class Hallinto {
      * 
      * 
      */
-    public void alustaOhjelma() throws FileNotFoundException {
+    private void alustaOhjelma() throws FileNotFoundException {
         File adjektiivit = new File ("adjektiivit.txt");
         File substantiivit = new File ("substantiivit.txt");
         File verbit = new File ("verbit.txt");
@@ -93,8 +101,8 @@ public class Hallinto {
      * 
      * 
      */
-    public File kaynnistaRunokone() throws IOException {
-       File runo = kone.kirjoitaRuno();
+    public String kaynnistaRunokone() throws IOException {
+       String runo = kone.kirjoitaRuno();
        return runo;
     }
 }

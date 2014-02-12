@@ -4,16 +4,10 @@
  */
 package sovelluslogiikka;
 
-import sovelluslogiikka.Tiedostonkirjaaja;
-import sovelluslogiikka.Tiedostonlukija;
 import java.io.File;
 import java.io.IOException;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  *
@@ -54,7 +48,8 @@ public class TiedostonkirjaajaTest {
         kirjuri.lisaaSana(testitiedosto, "helsinki");
         kirjuri.lisaaSana(testitiedosto, "tukholma");
         kirjuri.lisaaSana(testitiedosto, "tallinna");
-        assertEquals(true, kirjuri.tyhjennaLista(testitiedosto));
+        assertFalse(kirjuri.tyhjennaLista(testitiedosto));
+        assertTrue(testitiedosto.length() == 0);
     }
     
     @Test
@@ -66,6 +61,13 @@ public class TiedostonkirjaajaTest {
         kirjuri.tyhjennaLista(testitiedosto);
     }
     
-    
-           
+    @Test
+    public void luoTiedostoksiToimii() throws IOException {
+        String teksti = "Tuu pois sielt netistä, tai mä kiskon sua letistä!";
+        
+        Tiedostonkirjaaja kirjuri = new Tiedostonkirjaaja(this.etsija);
+        File tiedosto = kirjuri.luoTiedostoksi("tiedostonkirjaaja.txt", teksti);
+        assertTrue(tiedosto.length() == teksti.length());
+    }
+          
 }

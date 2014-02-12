@@ -7,6 +7,8 @@ package superlabra.runogeneraattori;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import javax.swing.SwingUtilities;
+import kayttoliittyma.GraafinenKayttoliittyma;
 import sovelluslogiikka.Arpoja;
 import sovelluslogiikka.Hallinto;
 import sovelluslogiikka.Tiedostonkirjaaja;
@@ -29,13 +31,15 @@ public class Kayttoliittyma {
      * 
      * 
      */
-//    public void kaynnista() throws FileNotFoundException, IOException {
-//        Arpoja arpoja = new Arpoja();
-//        Tiedostonlukija lukija = new Tiedostonlukija();
-//        Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja(lukija);
-//        Hallinto hallinto = new Hallinto(lukija, kirjaaja, arpoja);
-//        
-//        File runo = hallinto.kaynnistaRunokone();
-//    }
+    public void kaynnista() throws FileNotFoundException {
+        
+        Arpoja arpoja = new Arpoja();
+        Tiedostonlukija lukija = new Tiedostonlukija();
+        Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja(lukija);
+        Hallinto hallinto = new Hallinto(lukija, kirjaaja, arpoja);
+        
+        GraafinenKayttoliittyma kayttoliittyma = new GraafinenKayttoliittyma(hallinto);
+        SwingUtilities.invokeLater(kayttoliittyma);
+    }
     
 }

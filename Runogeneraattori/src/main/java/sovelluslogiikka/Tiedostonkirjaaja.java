@@ -63,13 +63,23 @@ public class Tiedostonkirjaaja {
      */
     
     public boolean tyhjennaLista(File tiedosto) throws IOException {
-            this.kirjoittaja = new FileWriter(tiedosto, true);
+            this.kirjoittaja = new FileWriter(tiedosto);
             if (tiedosto.length() != 0) {
                 kirjoittaja.write("");
                 kirjoittaja.close();
                 return true;
             }
             return false;
+    }
+    
+    public File luoTiedostoksi(String tiedostonimi, String teksti) throws IOException {
+        File file = new File(tiedostonimi);
+        this.kirjoittaja = new FileWriter(file);
+        kirjoittaja.write(teksti); 
+        kirjoittaja.close();
+            
+         
+        return file;
     }
   
 }

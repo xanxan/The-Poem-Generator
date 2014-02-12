@@ -46,11 +46,7 @@ public class HallintoTest {
     @Test
     public void alustaOhjelmaToimii() {
         
-        try {
-        hallinto.alustaOhjelma();
-        } catch(Exception e) {
-            assertTrue(false);
-        }
+       
         
         assertTrue(hallinto.getVarasto().getVerbit() != null);
         assertTrue(hallinto.getVarasto().getVerbit().size() > 0);
@@ -59,10 +55,10 @@ public class HallintoTest {
     
     @Test
     public void kaynnistaRunokoneToimii() throws IOException {
-        File runo = hallinto.kaynnistaRunokone();
+        String runo = hallinto.kaynnistaRunokone();
         
         assertTrue(runo.length() != 0);
-        assertTrue(runo.exists());
-        assertTrue(runo.isFile());
+        assertFalse(runo.isEmpty());
+        
     }
 }

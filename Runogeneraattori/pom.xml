@@ -40,7 +40,7 @@
                       <includes>
                           <include>sanavarasto/*.class</include>
                          <include>sovelluslogiikka/*.class</include>
-                         <include>superlabra.runogeneraattori/*.class</include>
+                         
                      </includes>
                    </instrumentation>
                </configuration>
@@ -55,13 +55,13 @@
                <targetClasses>
                   <param>sanavarasto.*</param>
                   <param>sovelluslogiikka.*</param>
-                  <param>superlabra.runogeneraattori.*</param>
+                  
                   
                </targetClasses>
                <targetTests>
                   <param>sanavarasto.*</param>
                   <param>sovelluslogiikka.*</param>
-                  <param>superlabra.runogeneraattori.*</param>
+                  
                </targetTests>
             </configuration>
         </plugin>

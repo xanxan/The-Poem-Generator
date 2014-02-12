@@ -16,7 +16,6 @@ import java.util.*;
  * @author anna
  */
 public class Tiedostonlukija {
-    private Scanner lukija;
    
     
     public Tiedostonlukija() {
@@ -29,12 +28,14 @@ public class Tiedostonlukija {
      * 
      * 
      */
-    public void tulostaTiedosto(File tiedosto) throws FileNotFoundException {
+    public String tulostaTiedosto(File tiedosto) throws FileNotFoundException {
         Scanner lukija = new Scanner(tiedosto);
+        String runo = "";
         while (lukija.hasNextLine()) {
-            System.out.println(lukija.nextLine());
+            runo += lukija.nextLine();
         }
         lukija.close();
+        return runo;
     }
     /**
      * Metodi tarkastaa löytyykö sille parametrina annettu sana halutusta

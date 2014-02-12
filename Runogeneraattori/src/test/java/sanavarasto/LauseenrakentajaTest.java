@@ -4,17 +4,11 @@
  */
 package sanavarasto;
 
-import sanavarasto.Lauseenrakentaja;
-import sanavarasto.Sanavarasto;
-import sovelluslogiikka.Arpoja;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Test;
+import sovelluslogiikka.Arpoja;
 import sovelluslogiikka.Hallinto;
 import sovelluslogiikka.Tiedostonkirjaaja;
 import sovelluslogiikka.Tiedostonlukija;

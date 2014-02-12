@@ -33,10 +33,10 @@ public class RunokoneTest {
     @Test
     
     public void kirjoitaRunoToimii() throws IOException {
-        File runo = this.hallinto.getKone().kirjoitaRuno();
-        assertTrue(runo.canRead());
-        assertTrue(runo.exists());
-        assertTrue(runo.canWrite());
+        String runo = this.hallinto.getKone().kirjoitaRuno();
+        assertFalse(runo.isEmpty());
+        assertTrue(runo.length() > 2);
+        
         
       
     }
