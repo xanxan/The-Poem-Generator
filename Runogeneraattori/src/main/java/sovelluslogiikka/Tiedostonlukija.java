@@ -25,7 +25,8 @@ public class Tiedostonlukija {
     /**
      * Metodi tulostaa sille annetun tiedoston sisällön. 
      * 
-     * 
+     * @param tiedosto tulostettava tiedosto
+     * @return tiedoston sisältö stringiin talletettuna.
      * 
      */
     public String tulostaTiedosto(File tiedosto) throws FileNotFoundException {
@@ -41,7 +42,9 @@ public class Tiedostonlukija {
      * Metodi tarkastaa löytyykö sille parametrina annettu sana halutusta
      * tiedostosta ja palauttaa tulosta vastaavan totuusarvon.
      * 
-     * 
+     * @param tiedosto Tiedosto josta sana etsitään.
+     * @param sana Etsittävä sana.
+     * @return true jos sana löytyi, false jos ei löytynyt.
      * 
      */
     public boolean onkoSanaVarastossa(String sana, File tiedosto) throws FileNotFoundException {
@@ -61,6 +64,8 @@ public class Tiedostonlukija {
      * Metodi luo Array -tyyppisen listan annetun tiedoston sisällöstä ja 
      * palauttaa sen.
      * 
+     * @param tiedosto Tiedosto jonka sisältö muutetaan listaksi.
+     * @return luotu Array-lista.
      * 
      * 
      */

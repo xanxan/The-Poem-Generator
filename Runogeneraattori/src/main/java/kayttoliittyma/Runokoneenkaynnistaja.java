@@ -6,19 +6,16 @@ package kayttoliittyma;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
-import sovelluslogiikka.Arpoja;
 import sovelluslogiikka.Hallinto;
-import sovelluslogiikka.Tiedostonkirjaaja;
 import sovelluslogiikka.Tiedostonlukija;
 /**
- *
+ * ActionListener -luokka, jonka tehtävänä on käynnistää runokone ja 
+ * lisätä toiminnankuuntelija tallennusnappiin.
  * @author anna
  */
 public class Runokoneenkaynnistaja implements ActionListener {

@@ -16,7 +16,7 @@ import javax.swing.WindowConstants;
 import sovelluslogiikka.Hallinto;
 
 /**
- *
+ * Luokka toteuttaa graafisen sivukäyttöliittymän, jossa uusi sana lisätään varastoon.
  * @author anna
  */
 public class SananTallennusKayttoliittyma implements Runnable {
@@ -45,6 +45,13 @@ public class SananTallennusKayttoliittyma implements Runnable {
         frame.setVisible(true);
     }
     
+    /**
+     * Metodi luo sivukäyttöliittymän tarvitsemat komponentit ja 
+     * tapahtumankuuntelijat sekä lisää ne liittymään.
+     * 
+     * @param container Container
+     *
+     */
     private void luoKomponentit(Container container) {
          GridLayout layout = new GridLayout(3, 2);
          container.setLayout(layout);
@@ -72,6 +79,13 @@ public class SananTallennusKayttoliittyma implements Runnable {
         return frame;
     }
     
+    /**
+     * Metodi luo layoutin layoutin sisälle, joka sisältää toimintanapin ja
+     * alueen joka myöhemmin ilmoittaa suorituksen onnistumisesta.
+     * 
+     * @return panel palauttaa uuden ja muokatun JPanelin.
+     *
+     */
     private JPanel nappiJaTulos() {
         JPanel panel = new JPanel(new GridLayout(1,2));
         this.lisaaNappi = new JButton("Add a new word!");

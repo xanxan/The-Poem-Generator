@@ -37,10 +37,10 @@ public class Runokone {
         return rakentaja;
     }
     /**
-     * Metodi kirjoittaa annettuun tiedostoon ohjelman laatiman runon ja 
+     * Metodi kokoaa yhteen ohjelman laatiman runon ja 
      * palauttaa sen.
      * 
-     * 
+     * @return runo Palauttaa koneen kokoaman runon.
      * 
      */
     public String kirjoitaRuno() throws IOException {
@@ -58,7 +58,7 @@ public class Runokone {
     /**
      * Metodi arpoo säkeistön rivimäärän ja palauttaa kokoamansa säkeistön.
      * 
-     * 
+     * @return sakeisto Palauttaa koneen kokoaman säkeistön.
      * 
      */
     public String sakeisto() throws FileNotFoundException {
@@ -74,7 +74,7 @@ public class Runokone {
      /**
      *Metodi arpoo lauserakenteen ja palauttaa Lauseenrakentajan kokoaman lauseen.
      * 
-     * 
+     * @return rivi Palauttaa koneen tuottaman rivin.
      * 
      */       
     public String rivi() throws FileNotFoundException {
@@ -89,7 +89,9 @@ public class Runokone {
      * Metodi käynnistää annetun parametrin avulla halutun lauserakenteen 
      * kokoajan ja palauttaa kootun lauseen.
      * 
+     * @param sanoja Antaa rivin sanamäärän.
      * 
+     * @return sanat Palauttaa ohjelman arpoman sanarakenteen.
      * 
      */
     public String sanat(int sanoja) throws FileNotFoundException {

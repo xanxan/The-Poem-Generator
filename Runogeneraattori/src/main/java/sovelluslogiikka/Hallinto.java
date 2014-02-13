@@ -36,7 +36,8 @@ public class Hallinto {
      * Metodi lisää uuden sanan haluttuun tiedostoon kutsumalla
      * metodia Tiedostonkirjaaja-luokasta ja antamalla sille tarvittavat parametrit. 
      * 
-     * 
+     * @param tiedosto Tiedosto johon uusi sana lisätään.
+     * @param sana Uusi lisättävä sana.
      * 
      */
     public void lisaaUusiSana(File tiedosto, String sana) throws IOException {
@@ -98,7 +99,7 @@ public class Hallinto {
      * Metodi käynnistää runokoneen ja palauttaa metodin kirjoitaRuno laatiman
      * runon.
      * 
-     * 
+     * @return runo Palauttaa ohjelman tuottaman runon.
      * 
      */
     public String kaynnistaRunokone() throws IOException {

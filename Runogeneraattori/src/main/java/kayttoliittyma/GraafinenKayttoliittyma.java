@@ -5,7 +5,7 @@
 package kayttoliittyma;
 
 /**
- *
+ * Luokka toteuttaa graafisen pääkäyttöliittymän.
  * @author anna
  */
 import java.awt.BorderLayout;
@@ -13,10 +13,6 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.io.FileNotFoundException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -55,7 +51,13 @@ public class GraafinenKayttoliittyma implements Runnable {
         frame.pack();
         frame.setVisible(true);
     }
-
+    /**
+     * Metodi luo käyttöliittymän tarvitsemat komponentit ja lisää ne liittymään.
+     * Metodi myös lisää tarvittavat ActionListenerit.
+     * 
+     * @param container Container
+     * 
+     */
     private void luoKomponentit(Container container)  {
         this.teksti = new JTextArea();
         JLabel sivupalkki = new JLabel("                                                    ");
@@ -75,11 +77,16 @@ public class GraafinenKayttoliittyma implements Runnable {
 
         
     }
-
+    
     public JFrame getFrame() {
         return frame;
     }
     
+    /**
+     * Metodi luo layoutin layoutin sisälle, joka sisältää liittymän otsikon.
+     * @return panel Metodi palauttaa uuden JPanelin.
+     *
+     */
     private JPanel luoOtsikko() {
         JPanel panel = new JPanel(new GridLayout(1,3));
         
@@ -92,7 +99,11 @@ public class GraafinenKayttoliittyma implements Runnable {
     }
     
   
-    
+    /**
+     * Metodi luo layoutin layoutin sisälle, joka sisältää liittymän toimintavalikon.
+     * @return panel Metodi palauttaa uuden JPanelin.
+     *
+     */
     private JPanel valikko() {
         JPanel panel = new JPanel(new GridLayout(1,3));
         this.save = new JButton("Save the poem");

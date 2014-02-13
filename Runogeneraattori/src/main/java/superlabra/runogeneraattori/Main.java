@@ -10,12 +10,13 @@ import java.io.IOException;
 
 
 /**
- *
+ * Main -luokka.
  * @author anna
  */
 public class Main {
 
     /**
+     * Käynnistää ohjelman käynnistämällä käyttöliittymän.
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException, IOException {

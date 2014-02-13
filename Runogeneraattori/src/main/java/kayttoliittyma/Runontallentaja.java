@@ -18,7 +18,8 @@ import sovelluslogiikka.Hallinto;
 import sovelluslogiikka.Tiedostonkirjaaja;
 
 /**
- *
+ * Luokka käynnistää tiedostotallennuksen suorrittavan graafisen käyttöliittymän
+ * ja antaa sille talletettavan tiedoston.
  * @author anna
  */
 public class Runontallentaja implements ActionListener {

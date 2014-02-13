@@ -26,7 +26,7 @@ public class Kayttoliittyma {
         
     }
     /**
-     * Metodi käynnistää käyttöliittymän ja luo tarvittavat oliot.
+     * Metodi käynnistää graafisen käyttöliittymän ja luo tarvittavat oliot.
      * 
      * 
      * 

@@ -23,7 +23,8 @@ public class Arpoja {
      * Metodi arpoo satunnaisen luvun nollan ja annetun ylärajan väliltä sekä
      * palauttaa sen.
      * 
-     * 
+     * @param ylaraja Korkein arvottavissa oleva luku.
+     * @return luku Palauttaa satunnaisesti arvotun luvun.
      * 
      */
     public int SatunnainenLuku(int ylaraja) {

@@ -133,7 +133,8 @@ public class Sanavarasto {
     /**
      *Metodi valitsee satunnaisesti sanan annetusta listasta ja palauttaa sen.
      * 
-     * 
+     * @param lista Sanalista
+     * @return sana Palauttaa satunnaisen sanan.
      * 
      */
     public String valitseSatunnainenSana(ArrayList<String> lista) {

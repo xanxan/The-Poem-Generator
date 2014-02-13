@@ -5,7 +5,7 @@
 package kayttoliittyma;
 
 /**
- *
+ * JFramen perivä luokka, joka toteuttaa JFileChooserin ja tallettaa sen avulla tiedoston käyttäjän koneelle haluttuun kansioon.
  * @author anna
  */
 import java.awt.FlowLayout;
@@ -39,7 +39,10 @@ public class Tiedostontallentaja extends JFrame {
 		setVisible(true);
 	}
 
-//	
+        /**
+         * Metodi avaa Hakemistonäkymän ja suorittaa tallennuksen.
+         *
+         */
 	private void NaytaSaveFile() {
 		JFileChooser tiedostonvalitsija = new JFileChooser(tiedosto);
 		tiedostonvalitsija.setDialogTitle("Specify a file to save");

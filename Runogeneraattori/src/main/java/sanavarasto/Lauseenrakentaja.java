@@ -44,10 +44,10 @@ public class Lauseenrakentaja {
     /**
      *Metodi lisää lauserakenteeseen verbin.
      * 
-     * 
+     *  @return rakenne Palauttaa lauserakenteen.
      * 
      */
-    public String Rakenne1() throws FileNotFoundException {
+    public String Rakenne1() {
         String rakenne = this.varasto.valitseSatunnainenSana(verbit) + "\n";
         
         return rakenne;
@@ -55,10 +55,10 @@ public class Lauseenrakentaja {
     /**
      *Metodi lisää lauserakenteeseen verbin ja pronominin.
      * 
-     * 
+     *  @return rakenne Palauttaa lauserakenteen.
      * 
      */
-    public String Rakenne2() throws FileNotFoundException {
+    public String Rakenne2()  {
         String rakenne = this.varasto.valitseSatunnainenSana(verbit);
         rakenne += " " + this.varasto.valitseSatunnainenSana(pronominit) + "\n";
         
@@ -69,10 +69,10 @@ public class Lauseenrakentaja {
      *Metodi lisää lauserakenteeseen pronominin ja verbin, sekä pronominista
      *riippuen preposition ja monikon tai pelkän substantiivin.
      * 
-     * 
+     *  @return rakenne Palauttaa lauserakenteen.
      * 
      */
-    public String Rakenne3() throws FileNotFoundException {
+    public String Rakenne3() {
         String rakenne = this.varasto.valitseSatunnainenSana(pronominit);
         if (rakenne.equals("he") || rakenne.equals(("she")) || rakenne.equals("it")
            || rakenne.equals("what") || rakenne.equals("who")) {
@@ -90,10 +90,10 @@ public class Lauseenrakentaja {
      * substantiivin, verbin preposition ja substantiivin tai monikon, verbin,
      * preposition ja monikon.
      * 
-     * 
+     *  @return rakenne Palauttaa lauserakenteen.
      * 
      */
-    public String Rakenne4() throws FileNotFoundException {
+    public String Rakenne4()  {
         String rakenne = this.varasto.valitseSatunnainenSana(numeraalit);
         if (rakenne.contains("one")) {
             rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit);
@@ -112,7 +112,7 @@ public class Lauseenrakentaja {
      * Metodi lisää lauserakenteeseen partikkelin, pronominin, verbin, 
      * adjektiivin ja substantiivin.
      * 
-     * 
+     *  @return rakenne Palauttaa lauserakenteen.
      * 
      */
     public String Rakenne5() {
@@ -130,7 +130,7 @@ public class Lauseenrakentaja {
     /**
      * Metodi lisää lauserakenteeseen adjektiivin ja substantiivin.
      * 
-     * 
+     *  @return rakenne Palauttaa lauserakenteen.
      * 
      */
     public String Rakenne6() {
@@ -141,7 +141,7 @@ public class Lauseenrakentaja {
     /**
      * Metodi lisää lauserakenteeseen verbin, preposition ja pronominin.
      * 
-     * 
+     * @return rakenne Palauttaa lauserakenteen.
      * 
      */
     public String Rakenne7() {

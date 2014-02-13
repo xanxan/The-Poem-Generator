@@ -10,7 +10,7 @@ import javax.swing.SwingUtilities;
 import sovelluslogiikka.Hallinto;
 
 /**
- *
+ * ActionListener -luokka, joka  käynnistää sanan tallennukseen tarkoitetun käyttöliittymän.
  * @author anna
  */
 public class Tallennuksenkaynnistaja implements ActionListener {

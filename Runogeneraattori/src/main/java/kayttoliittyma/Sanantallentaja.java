@@ -19,7 +19,7 @@ import sovelluslogiikka.Hallinto;
 import sovelluslogiikka.Tiedostonkirjaaja;
 
 /**
- *
+ * Action Listener -luokka, joka hoitaa sanan lisäämisen varastoon.
  * @author anna
  */
 public class Sanantallentaja implements ActionListener {
