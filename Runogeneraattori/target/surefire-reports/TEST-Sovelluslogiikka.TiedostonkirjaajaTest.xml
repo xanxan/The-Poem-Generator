@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.007" errors="0" skipped="0" tests="5" name="sovelluslogiikka.TiedostonkirjaajaTest">
+<testsuite failures="0" time="0.006" errors="0" skipped="0" tests="5" name="sovelluslogiikka.TiedostonkirjaajaTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -45,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="fi"/>
     <property name="awt.toolkit" value="apple.awt.CToolkit"/>
@@ -67,6 +67,6 @@
   <testcase time="0.002" classname="sovelluslogiikka.TiedostonkirjaajaTest" name="KirjaajaLisaaSanan"/>
   <testcase time="0" classname="sovelluslogiikka.TiedostonkirjaajaTest" name="luoTiedostoksiToimii"/>
   <testcase time="0.001" classname="sovelluslogiikka.TiedostonkirjaajaTest" name="KirjaajaTyhjentaaListan"/>
-  <testcase time="0.001" classname="sovelluslogiikka.TiedostonkirjaajaTest" name="KirjaajaPoistaaSanan"/>
+  <testcase time="0" classname="sovelluslogiikka.TiedostonkirjaajaTest" name="KirjaajaPoistaaSanan"/>
   <testcase time="0.002" classname="sovelluslogiikka.TiedostonkirjaajaTest" name="KirjaajaEiLisaaSanaaJokaLoytyyVarastosta"/>
 </testsuite>
