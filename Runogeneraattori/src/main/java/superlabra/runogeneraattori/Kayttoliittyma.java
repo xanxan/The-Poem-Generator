@@ -4,9 +4,7 @@
  */
 package superlabra.runogeneraattori;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import javax.swing.SwingUtilities;
 import kayttoliittyma.GraafinenKayttoliittyma;
 import sovelluslogiikka.Arpoja;

@@ -30,8 +30,7 @@ public class GraafinenKayttoliittyma implements Runnable {
     private Hallinto hallinto;
     private JTextArea teksti;
     private Runokoneenkaynnistaja runonkaynnistaja;
-    private Sanantallentaja tallentaja;
-
+    
     public GraafinenKayttoliittyma(Hallinto hallinto) {
         this.hallinto = hallinto;
     }
@@ -40,14 +39,8 @@ public class GraafinenKayttoliittyma implements Runnable {
     public void run() {
         frame = new JFrame("Poem generator");
         frame.setPreferredSize(new Dimension(750, 600));
-
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        
-            luoKomponentit(frame.getContentPane());
-        
-            
-        
-
+        luoKomponentit(frame.getContentPane());
         frame.pack();
         frame.setVisible(true);
     }
@@ -69,7 +62,7 @@ public class GraafinenKayttoliittyma implements Runnable {
         container.add(this.teksti, BorderLayout.CENTER);
         container.add(valikko(), BorderLayout.SOUTH);
         
-        this.runonkaynnistaja = new Runokoneenkaynnistaja(teksti, container, save, hallinto);
+        this.runonkaynnistaja = new Runokoneenkaynnistaja(teksti, save, hallinto);
         Tallennuksenkaynnistaja kaynnistaja = new Tallennuksenkaynnistaja(hallinto);
         
         this.button.addActionListener(this.runonkaynnistaja);

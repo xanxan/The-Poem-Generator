@@ -8,49 +8,38 @@ package kayttoliittyma;
  * JFramen perivä luokka, joka toteuttaa JFileChooserin ja tallettaa sen avulla tiedoston käyttäjän koneelle haluttuun kansioon.
  * @author anna
  */
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
-import javax.swing.JButton;
+import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import sovelluslogiikka.Tiedostonkirjaaja;
 
 public class Tiedostontallentaja extends JFrame {
 
-	private JButton buttonBrowse;
+	
         private File tiedosto;
+        private Tiedostonkirjaaja kirjaaja;
+        private String runo;
 
-	public Tiedostontallentaja(File tiedosto) {
-		super("Save File");
-		setLayout(new FlowLayout());
-		buttonBrowse = new JButton("Save...");
-		buttonBrowse.addActionListener(new ActionListener() {
-
-                 @Override
-                public void actionPerformed(ActionEvent arg0) {
-                    NaytaSaveFile();
-                }
-		});
-		getContentPane().add(buttonBrowse);
-		setSize(300, 100);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
+	public Tiedostontallentaja(String runo, Tiedostonkirjaaja kirjaaja) throws IOException {
+            this.kirjaaja = kirjaaja;
+            this.runo = runo;
+            naytaSaveFile();
+                
 	}
 
         /**
          * Metodi avaa Hakemistonäkymän ja suorittaa tallennuksen.
          *
          */
-	private void NaytaSaveFile() {
+	private void naytaSaveFile() throws IOException {
 		JFileChooser tiedostonvalitsija = new JFileChooser(tiedosto);
 		tiedostonvalitsija.setDialogTitle("Specify a file to save");
 
 		int kayttajaValitsee = tiedostonvalitsija.showSaveDialog(this);
 		if (kayttajaValitsee == JFileChooser.APPROVE_OPTION) {
 			File talletettava = tiedostonvalitsija.getSelectedFile();
-			System.out.println("Save as file: " + talletettava.getAbsolutePath());
-		}
+                        this.kirjaaja.kirjoitaTiedostoon(talletettava, runo);
+                }
 	}
 }

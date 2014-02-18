@@ -21,14 +21,11 @@ import sanavarasto.Sanavarasto;
  */
 public class Runokone {
     private Arpoja arpoja;
-    private Sanavarasto varasto;
     private Lauseenrakentaja rakentaja;
-    private FileWriter kirjoittaja;
     
     
     public Runokone(Arpoja arpoja, Sanavarasto varasto) {
         this.arpoja = arpoja;
-        this.varasto = varasto;
         this.rakentaja =  new Lauseenrakentaja(arpoja, varasto);
         
     }
@@ -78,7 +75,7 @@ public class Runokone {
      * 
      */       
     public String rivi() throws FileNotFoundException {
-        int sanoja = 1 + arpoja.SatunnainenLuku(6);
+        int sanoja = 1 + arpoja.SatunnainenLuku(11);
         String rivi = "";
         
         rivi += this.sanat(sanoja);
@@ -96,7 +93,16 @@ public class Runokone {
      */
     public String sanat(int sanoja) throws FileNotFoundException {
         String sanat = "";
-        if (sanoja == 7) {
+        if (sanoja == 10) {
+            sanat = rakentaja.Rakenne10();
+            
+        } else if (sanoja == 9) {
+            sanat = rakentaja.Rakenne9();
+            
+        } else if (sanoja == 8) {
+            sanat = rakentaja.Rakenne8();
+            
+        } else if (sanoja == 7) {
              sanat = rakentaja.Rakenne7();
              
         } else if (sanoja == 6) {

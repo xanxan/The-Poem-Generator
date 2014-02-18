@@ -4,9 +4,8 @@
  */
 package sanavarasto;
 
-import sovelluslogiikka.Arpoja;
-
 import java.util.ArrayList;
+import sovelluslogiikka.Arpoja;
 
 /**
  *Luokan tehtävänä on säilyttää annettuja sanalistoja ja poimia sanoja 

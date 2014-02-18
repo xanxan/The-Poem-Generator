@@ -50,10 +50,10 @@ public class Tiedostonlukija {
     public boolean onkoSanaVarastossa(String sana, File tiedosto) throws FileNotFoundException {
         Scanner lukija = new Scanner(tiedosto); 
         while (lukija.hasNextLine()) {
-          String rivi = lukija.nextLine();
-          if (rivi.equals(sana)) {
-              return true;
-          }
+            String rivi = lukija.nextLine();
+            if (rivi.equals(sana)) {
+                  return true;
+            }
         }
 
         lukija.close();

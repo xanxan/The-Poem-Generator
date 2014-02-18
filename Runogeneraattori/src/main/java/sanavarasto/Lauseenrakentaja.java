@@ -5,11 +5,8 @@
 package sanavarasto;
 
 
-import sovelluslogiikka.Arpoja;
-import sovelluslogiikka.Tiedostonlukija;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import sovelluslogiikka.Arpoja;
 
 /**
  * Luokan tehtävänä on koota satunnaisesti valitut sanat yhteen.
@@ -48,8 +45,19 @@ public class Lauseenrakentaja {
      * 
      */
     public String Rakenne1() {
-        String rakenne = this.varasto.valitseSatunnainenSana(verbit) + "\n";
-        
+        String rakenne = "";
+        while (true) {
+            if (rakenne.matches("I|you|he|she|it|we|they")) {
+                break;
+            } else {
+                rakenne = this.varasto.valitseSatunnainenSana(pronominit);
+            }
+        }
+        if (rakenne.matches("he|she|it")) {
+            rakenne += " " + this.varasto.valitseSatunnainenSana(verbit) + "s\n";
+        } else {
+            rakenne += " " + this.varasto.valitseSatunnainenSana(verbit) + "\n";
+        }
         return rakenne;
     }
     /**
@@ -60,8 +68,14 @@ public class Lauseenrakentaja {
      */
     public String Rakenne2()  {
         String rakenne = this.varasto.valitseSatunnainenSana(verbit);
-        rakenne += " " + this.varasto.valitseSatunnainenSana(pronominit) + "\n";
-        
+        String apu = this.varasto.valitseSatunnainenSana(pronominit);
+        if (apu.matches("me|yourself|it|him|her|for us")) {
+            rakenne += " " + apu + "!" + "\n";
+        } else if (apu.matches("I|who|what")) {
+            rakenne += " " + apu + "?" + "\n";
+        } else {
+            rakenne += "!" + "\n";
+        }
        
         return rakenne;
     }
@@ -74,9 +88,14 @@ public class Lauseenrakentaja {
      */
     public String Rakenne3() {
         String rakenne = this.varasto.valitseSatunnainenSana(pronominit);
-        if (rakenne.equals("he") || rakenne.equals(("she")) || rakenne.equals("it")
-           || rakenne.equals("what") || rakenne.equals("who")) {
-            rakenne += " is " + this.varasto.valitseSatunnainenSana(verbit) + "ing";
+        if (rakenne.matches("he|she|it|what|who")) {
+            rakenne += " is ";
+            String apu =  this.varasto.valitseSatunnainenSana(verbit);
+            if (apu.endsWith("e")) {
+                apu = apu.substring(0, apu.length() - 1);
+            
+            }
+            rakenne += apu + "ing";
             rakenne += " " + this.varasto.valitseSatunnainenSana(prepositiot);
             rakenne += " " + this.varasto.valitseSatunnainenSana(monikko);
         } else {
@@ -95,7 +114,7 @@ public class Lauseenrakentaja {
      */
     public String Rakenne4()  {
         String rakenne = this.varasto.valitseSatunnainenSana(numeraalit);
-        if (rakenne.contains("one")) {
+        if (rakenne.matches("one")) {
             rakenne += " " + this.varasto.valitseSatunnainenSana(substantiivit);
             rakenne += " " + this.varasto.valitseSatunnainenSana(verbit) + "s";
             rakenne += " " + this.varasto.valitseSatunnainenSana(prepositiot);
@@ -119,7 +138,7 @@ public class Lauseenrakentaja {
         String rakenne = this.varasto.valitseSatunnainenSana(partikkelit);
         rakenne += " " + this.varasto.valitseSatunnainenSana(pronominit);
         rakenne += " " + this.varasto.valitseSatunnainenSana(verbit);
-        if (rakenne.contains("he") || rakenne.contains(("she")) || rakenne.contains("it")) {
+        if (rakenne.matches("he|she|it")) {
             rakenne += "s";
         } 
         rakenne += " " + this.varasto.valitseSatunnainenSana(adjektiivit);
@@ -150,5 +169,39 @@ public class Lauseenrakentaja {
         rakenne += " " + this.varasto.valitseSatunnainenSana(pronominit) + "\n";
         return rakenne;
     }
-    
+    /**
+     * Metodi lisää lauserakenteeseen partikkelin, monikon, verbin ja preposition.
+     * 
+     * @return rakenne Palauttaa lauserakenteen.
+     * 
+     */
+    public String Rakenne8() {
+        String rakenne = this.varasto.valitseSatunnainenSana(partikkelit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(monikko);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(verbit);
+        rakenne += " " + this.varasto.valitseSatunnainenSana(prepositiot) + "\n";
+        return rakenne;
+    }
+    /**
+     * Metodi lisää lauserakenteeseen monikon, olla-verbin ja adjektiivin.
+     * 
+     * @return rakenne Palauttaa lauserakenteen.
+     * 
+     */
+    public String Rakenne9() {
+        String rakenne = this.varasto.valitseSatunnainenSana(monikko);
+        rakenne += " are " + this.varasto.valitseSatunnainenSana(adjektiivit) + "\n";
+        return rakenne;
+    }
+    /**
+     * Metodi lisää lauserakenteeseen substantiivin, futuuri-verbin, ja verbin.
+     * 
+     * @return rakenne Palauttaa lauserakenteen.
+     * 
+     */
+    public String Rakenne10() {
+        String rakenne = this.varasto.valitseSatunnainenSana(substantiivit);
+        rakenne += " will " + this.varasto.valitseSatunnainenSana(verbit) + "\n";
+        return rakenne;
+    }
 }

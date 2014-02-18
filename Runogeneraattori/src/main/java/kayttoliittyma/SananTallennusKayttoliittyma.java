@@ -33,14 +33,8 @@ public class SananTallennusKayttoliittyma implements Runnable {
     public void run() {
         frame = new JFrame("Add a new word");
         frame.setPreferredSize(new Dimension(800, 200));
-
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        
-            luoKomponentit(frame.getContentPane());
-        
-            
-        
-
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        luoKomponentit(frame.getContentPane());
         frame.pack();
         frame.setVisible(true);
     }
@@ -70,7 +64,7 @@ public class SananTallennusKayttoliittyma implements Runnable {
          container.add(nappiJaTulos());
          
          
-         Sanantallentaja tallentaja = new Sanantallentaja(container, hallinto, sanaKentta, tiedostoKentta, this.tulos);
+         Sanantallentaja tallentaja = new Sanantallentaja(hallinto, sanaKentta, tiedostoKentta, this.tulos);
          lisaaNappi.addActionListener(tallentaja);
 
     }

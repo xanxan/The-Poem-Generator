@@ -93,5 +93,13 @@ public class Tiedostonkirjaaja {
          
         return file;
     }
+    
+    public File kirjoitaTiedostoon(File tiedosto, String teksti) throws IOException {
+        this.kirjoittaja = new FileWriter(tiedosto);
+        kirjoittaja.write(teksti);
+        kirjoittaja.close();
+        return tiedosto;
+        
+    }
   
 }

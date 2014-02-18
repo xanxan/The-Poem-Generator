@@ -12,7 +12,6 @@ import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import sovelluslogiikka.Hallinto;
-import sovelluslogiikka.Tiedostonlukija;
 /**
  * ActionListener -luokka, jonka tehtävänä on käynnistää runokone ja 
  * lisätä toiminnankuuntelija tallennusnappiin.
@@ -22,15 +21,13 @@ public class Runokoneenkaynnistaja implements ActionListener {
     
     private JTextArea kohde;
     private JButton save;
-    private Container container;
     private Hallinto hallinto;
     private String runo;
 
 
-    public Runokoneenkaynnistaja(JTextArea kohde, Container container, JButton save, Hallinto hallinto) {
+    public Runokoneenkaynnistaja(JTextArea kohde, JButton save, Hallinto hallinto) {
         this.save = save;
         this.kohde = kohde;
-        this.container = container;
         this.hallinto = hallinto;
     }
     
@@ -38,16 +35,9 @@ public class Runokoneenkaynnistaja implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         try {
             this.runo = " " + '\n' + this.hallinto.kaynnistaRunokone();
-            Tiedostonlukija lukija = this.hallinto.getLukija();
-          
-            
-            
             this.kohde.setText(runo);
             this.save.setEnabled(true);
-            this.save.addActionListener(new Runontallentaja(container, hallinto, runo));
-            
-            
-            
+            this.save.addActionListener(new Runontallentaja(hallinto, runo));
         } catch (IOException ex) {
             Logger.getLogger(Runokoneenkaynnistaja.class.getName()).log(Level.SEVERE, null, ex);
         }

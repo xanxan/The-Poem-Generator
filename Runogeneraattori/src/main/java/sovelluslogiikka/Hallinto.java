@@ -26,7 +26,6 @@ public class Hallinto {
     
     public Hallinto(Tiedostonlukija lukija, Tiedostonkirjaaja kirjaaja, Arpoja arpoja) throws FileNotFoundException {
         this.kirjaaja = kirjaaja;
-       
         this.lukija = lukija;
         this.varasto = new Sanavarasto(arpoja); 
         this.alustaOhjelma();
