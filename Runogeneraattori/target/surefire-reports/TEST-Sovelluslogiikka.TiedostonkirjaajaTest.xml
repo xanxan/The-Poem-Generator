@@ -65,8 +65,8 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase time="0.001" classname="sovelluslogiikka.TiedostonkirjaajaTest" name="KirjaajaLisaaSanan"/>
-  <testcase time="0" classname="sovelluslogiikka.TiedostonkirjaajaTest" name="luoTiedostoksiToimii"/>
-  <testcase time="0.002" classname="sovelluslogiikka.TiedostonkirjaajaTest" name="KirjaajaTyhjentaaListan"/>
+  <testcase time="0.001" classname="sovelluslogiikka.TiedostonkirjaajaTest" name="luoTiedostoksiToimii"/>
+  <testcase time="0.001" classname="sovelluslogiikka.TiedostonkirjaajaTest" name="KirjaajaTyhjentaaListan"/>
   <testcase time="0.001" classname="sovelluslogiikka.TiedostonkirjaajaTest" name="KirjaajaPoistaaSanan"/>
   <testcase time="0.001" classname="sovelluslogiikka.TiedostonkirjaajaTest" name="KirjaajaEiLisaaSanaaJokaLoytyyVarastosta"/>
 </testsuite>

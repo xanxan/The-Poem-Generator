@@ -43,7 +43,7 @@ public class SanavarastoTest {
         String s2 = this.varasto.valitseSatunnainenSana(this.testi);
         String s3 = this.varasto.valitseSatunnainenSana(this.testi);
         String s4 = this.varasto.valitseSatunnainenSana(this.testi);
-        assertFalse(s1.equals(s4) && s1.equals(s2) && s1.equals(3) &&
+        assertFalse(s1.equals(s4) && s1.equals(s2) && s1.equals(s3) &&
                    s2.equals(s4) && s2.equals(s3) && s3.equals(s4));
     }
     

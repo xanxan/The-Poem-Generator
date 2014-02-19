@@ -64,8 +64,8 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0" classname="sovelluslogiikka.TiedostonlukijaTest" name="luoListaEiLuoTyhjaaListaa"/>
-  <testcase time="0.002" classname="sovelluslogiikka.TiedostonlukijaTest" name="SanaEiOleVarastossa"/>
+  <testcase time="0.001" classname="sovelluslogiikka.TiedostonlukijaTest" name="luoListaEiLuoTyhjaaListaa"/>
+  <testcase time="0.001" classname="sovelluslogiikka.TiedostonlukijaTest" name="SanaEiOleVarastossa"/>
   <testcase time="0.001" classname="sovelluslogiikka.TiedostonlukijaTest" name="SanaOnVarastossa"/>
   <testcase time="0.001" classname="sovelluslogiikka.TiedostonlukijaTest" name="tulostaTiedostoToimii"/>
 </testsuite>
