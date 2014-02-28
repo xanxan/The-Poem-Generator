@@ -4,19 +4,12 @@
  */
 package sovelluslogiikka;
 
-import sovelluslogiikka.Tiedostonkirjaaja;
-import sovelluslogiikka.Tiedostonlukija;
-import sanavarasto.Sanavarasto;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  *
@@ -40,7 +33,6 @@ public class TiedostonlukijaTest {
        
        assertFalse("1", lukija.onkoSanaVarastossa("dgdjhfh", testitiedosto));
        assertFalse("2", lukija.onkoSanaVarastossa(" ", testitiedosto));
-       
        assertFalse("4", lukija.onkoSanaVarastossa("ankka kissa", testitiedosto));
        assertFalse("5", lukija.onkoSanaVarastossa("kissan", testitiedosto));
        assertFalse("6", lukija.onkoSanaVarastossa("ankkakissa", testitiedosto));
@@ -57,6 +49,7 @@ public class TiedostonlukijaTest {
        kirjuri.lisaaSana(testitiedosto, "anna");
        
        assertEquals(true,lukija.onkoSanaVarastossa("anna", testitiedosto));
+       
        kirjuri.tyhjennaLista(testitiedosto);
    }
    
@@ -64,12 +57,14 @@ public class TiedostonlukijaTest {
    public void luoListaEiLuoTyhjaaListaa() throws FileNotFoundException, IOException {
        
        File testitiedosto = new File ("tiedostonlukijaTest.txt");
-      
        Tiedostonlukija lukija = new Tiedostonlukija();
        Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja(lukija);
+       
        kirjaaja.lisaaSana(testitiedosto, "leijona");
        ArrayList<String> lista = lukija.luoLista(testitiedosto);
+       
        assertEquals("leijona", lista.get(lista.size()-1));
+       
        kirjaaja.tyhjennaLista(testitiedosto);
        
    }
@@ -79,10 +74,13 @@ public class TiedostonlukijaTest {
        File testitiedosto = new File ("tiedostonlukijaTest.txt");
        Tiedostonlukija lukija = new Tiedostonlukija();
        Tiedostonkirjaaja kirjaaja = new Tiedostonkirjaaja(lukija);
+       
        kirjaaja.lisaaSana(testitiedosto, "kissa");
        String tiedosto = lukija.tulostaTiedosto(testitiedosto);
+       
        assertEquals(tiedosto, "kissa");
        assertFalse(tiedosto.isEmpty());
+       
        kirjaaja.tyhjennaLista(testitiedosto);
    }
    

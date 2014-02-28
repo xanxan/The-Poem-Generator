@@ -5,7 +5,6 @@
 package sovelluslogiikka;
 
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import sanavarasto.Lauseenrakentaja;
 import sanavarasto.Sanavarasto;
@@ -43,8 +42,8 @@ public class Runokone {
     public String kirjoitaRuno() throws IOException {
 
         int sakeistoja = 1 + arpoja.SatunnainenLuku(6);
-        
         String runo = "";
+        
          for (int i = 0; i < sakeistoja; i++) {
               runo += this.sakeisto() + '\n';
           } 
@@ -75,7 +74,7 @@ public class Runokone {
      * 
      */       
     public String rivi() throws FileNotFoundException {
-        int sanoja = 1 + arpoja.SatunnainenLuku(11);
+        int sanoja = 1+ arpoja.SatunnainenLuku(11);
         String rivi = "";
         
         rivi += this.sanat(sanoja);

@@ -54,7 +54,14 @@ public class Lauseenrakentaja {
             }
         }
         if (rakenne.matches("he|she|it")) {
-            rakenne += " " + this.varasto.valitseSatunnainenSana(verbit) + "s\n";
+            String apu = this.varasto.valitseSatunnainenSana(verbit);
+            if (apu.matches("cry|copy|bury|carry|empty|fancy|hurry|identify|"
+                    + "marry|multiply|rely|reply|satisfy|supply|terrify|untidy|worry")) {
+                apu = apu.substring(0, apu.length()-1) + "ies";
+                rakenne += " " + apu +"\n";
+            } else {
+                rakenne += " " + apu + "s\n";
+            }
         } else {
             rakenne += " " + this.varasto.valitseSatunnainenSana(verbit) + "\n";
         }
@@ -70,11 +77,11 @@ public class Lauseenrakentaja {
         String rakenne = this.varasto.valitseSatunnainenSana(verbit);
         String apu = this.varasto.valitseSatunnainenSana(pronominit);
         if (apu.matches("me|yourself|it|him|her|for us")) {
-            rakenne += " " + apu + "!" + "\n";
+            rakenne += " " + apu + "!\n";
         } else if (apu.matches("I|who|what")) {
-            rakenne += " " + apu + "?" + "\n";
+            rakenne += " " + apu + "?\n";
         } else {
-            rakenne += "!" + "\n";
+            rakenne += "!\n";
         }
        
         return rakenne;

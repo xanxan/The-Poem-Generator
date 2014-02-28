@@ -43,47 +43,62 @@ public class LauseenrakentajaTest {
     
    @Test
    public void Rakenne1ToimiiOikein() throws FileNotFoundException {
-       assertFalse(this.hallinto.getKone().getRakentaja().Rakenne1().isEmpty());
+       String rakenne = rakentaja.Rakenne1();
+       
+       assertFalse(rakenne.isEmpty());
+       assertTrue(rakenne.contains("I") || rakenne.contains("you") ||
+                  rakenne.contains("he") || rakenne.contains("she") ||
+                  rakenne.contains("it") || rakenne.contains("we") || 
+                  rakenne.contains("they"));
        
    }
    
    @Test
    public void Rakenne2ToimiiOikein() throws FileNotFoundException {
-      
-       assertFalse(this.hallinto.getKone().getRakentaja().Rakenne2().isEmpty());
+       String rakenne = rakentaja.Rakenne2();
+       
+       assertFalse(rakenne.isEmpty());
+       assertTrue(rakenne.contains("!") || rakenne.contains("?"));
+
    }
   
    @Test
    public void Rakenne3ToimiiOikein() throws FileNotFoundException {
-       assertFalse(this.hallinto.getKone().getRakentaja().Rakenne3().isEmpty());
+       assertFalse(rakentaja.Rakenne3().isEmpty());
    }
    @Test
    public void Rakenne4ToimiiOikein() throws FileNotFoundException {
-       assertFalse(this.hallinto.getKone().getRakentaja().Rakenne4().isEmpty());
+       assertFalse(rakentaja.Rakenne4().isEmpty());
    }
    @Test
    public void Rakenne5ToimiiOikein() throws FileNotFoundException {
-       assertFalse(this.hallinto.getKone().getRakentaja().Rakenne5().isEmpty());
+       assertFalse(rakentaja.Rakenne5().isEmpty());
    }
    @Test
    public void Rakenne6ToimiiOikein() throws FileNotFoundException {
-       assertFalse(this.hallinto.getKone().getRakentaja().Rakenne6().isEmpty());
+       assertFalse(rakentaja.Rakenne6().isEmpty());
    }
    @Test
    public void Rakenne7ToimiiOikein() throws FileNotFoundException {
-       assertFalse(this.hallinto.getKone().getRakentaja().Rakenne7().isEmpty());
+       assertFalse(rakentaja.Rakenne7().isEmpty());
    }
    @Test
    public void Rakenne8ToimiiOikein() throws FileNotFoundException {
-       assertFalse(this.hallinto.getKone().getRakentaja().Rakenne8().isEmpty());
+       assertFalse(rakentaja.Rakenne8().isEmpty());
    }
    @Test
    public void Rakenne9ToimiiOikein() throws FileNotFoundException {
-       assertFalse(this.hallinto.getKone().getRakentaja().Rakenne9().isEmpty());
+       String rakenne = rakentaja.Rakenne9();
+       
+       assertFalse(rakenne.isEmpty());
+       assertTrue(rakenne.contains("are"));
    }
    @Test
    public void Rakenne10ToimiiOikein() throws FileNotFoundException {
-       assertFalse(this.hallinto.getKone().getRakentaja().Rakenne10().isEmpty());
+       String rakenne = rakentaja.Rakenne10();
+       
+       assertFalse(rakenne.isEmpty());
+       assertTrue(rakenne.contains("will"));
    }
    
    

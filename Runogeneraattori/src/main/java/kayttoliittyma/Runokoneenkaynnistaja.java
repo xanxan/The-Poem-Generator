@@ -3,7 +3,6 @@
  * and open the template in the editor.
  */
 package kayttoliittyma;
-import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;

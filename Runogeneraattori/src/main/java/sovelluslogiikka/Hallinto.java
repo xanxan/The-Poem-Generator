@@ -67,14 +67,14 @@ public class Hallinto {
      * 
      */
     private void alustaOhjelma() throws FileNotFoundException {
-        File adjektiivit = new File ("adjektiivit.txt");
-        File substantiivit = new File ("substantiivit.txt");
-        File verbit = new File ("verbit.txt");
-        File numeraalit = new File ("numeraalit.txt");
-        File pronominit = new File ("pronominit.txt");
-        File partikkelit = new File ("partikkelit.txt");
+        File adjektiivit = new File ("adjectives.txt");
+        File substantiivit = new File ("nouns.txt");
+        File verbit = new File ("verbs.txt");
+        File numeraalit = new File ("numerals.txt");
+        File pronominit = new File ("pronouns.txt");
+        File partikkelit = new File ("particles.txt");
         File monikko = new File ("monikko.txt");
-        File prepositiot = new File ("prepositiot.txt");
+        File prepositiot = new File ("prepositions.txt");
         
         ArrayList<String> adj = this.lukija.luoLista(adjektiivit);
         ArrayList<String> subs = this.lukija.luoLista(substantiivit);
@@ -103,6 +103,7 @@ public class Hallinto {
      */
     public String kaynnistaRunokone() throws IOException {
        String runo = kone.kirjoitaRuno();
+       
        return runo;
     }
 }

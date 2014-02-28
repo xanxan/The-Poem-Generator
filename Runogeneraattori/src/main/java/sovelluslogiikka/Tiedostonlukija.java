@@ -32,10 +32,12 @@ public class Tiedostonlukija {
     public String tulostaTiedosto(File tiedosto) throws FileNotFoundException {
         Scanner lukija = new Scanner(tiedosto);
         String runo = "";
+        
         while (lukija.hasNextLine()) {
             runo += lukija.nextLine();
         }
         lukija.close();
+        
         return runo;
     }
     /**
@@ -49,14 +51,17 @@ public class Tiedostonlukija {
      */
     public boolean onkoSanaVarastossa(String sana, File tiedosto) throws FileNotFoundException {
         Scanner lukija = new Scanner(tiedosto); 
+        
         while (lukija.hasNextLine()) {
             String rivi = lukija.nextLine();
+            
             if (rivi.equals(sana)) {
                   return true;
             }
         }
 
         lukija.close();
+        
         return false;
     }
     
@@ -72,12 +77,14 @@ public class Tiedostonlukija {
      public ArrayList<String> luoLista(File tiedosto) throws FileNotFoundException {
         Scanner lukija = new Scanner(tiedosto);
         ArrayList<String> lista = new ArrayList();
+        
         while (lukija.hasNextLine()) {
             String rivi = lukija.nextLine();
             lista.add(rivi);
         }
         
         lukija.close();
+        
         return lista;
         
     }

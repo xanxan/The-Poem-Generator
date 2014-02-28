@@ -22,6 +22,7 @@ public class SanavarastoTest {
         this.arpoja = new Arpoja();
         this.varasto = new Sanavarasto(arpoja);
         this.testi = new ArrayList();
+        
         this.testi.add("kirja");
         this.testi.add("tuoli");
         this.testi.add("pöytä");
@@ -32,6 +33,7 @@ public class SanavarastoTest {
     
     public void valitseSatunnainenSanaToimiiOikein() {
         String sana = this.varasto.valitseSatunnainenSana(this.testi);
+        
         assertFalse(sana.isEmpty());
     }
     
@@ -43,6 +45,7 @@ public class SanavarastoTest {
         String s2 = this.varasto.valitseSatunnainenSana(this.testi);
         String s3 = this.varasto.valitseSatunnainenSana(this.testi);
         String s4 = this.varasto.valitseSatunnainenSana(this.testi);
+        
         assertFalse(s1.equals(s4) && s1.equals(s2) && s1.equals(s3) &&
                    s2.equals(s4) && s2.equals(s3) && s3.equals(s4));
     }

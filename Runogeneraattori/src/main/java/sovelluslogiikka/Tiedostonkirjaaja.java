@@ -69,6 +69,7 @@ public class Tiedostonkirjaaja {
     
     public boolean tyhjennaLista(File tiedosto) throws IOException {
             this.kirjoittaja = new FileWriter(tiedosto);
+            
             if (tiedosto.length() != 0) {
                 kirjoittaja.write("");
                 kirjoittaja.close();
@@ -87,17 +88,19 @@ public class Tiedostonkirjaaja {
     public File luoTiedostoksi(String tiedostonimi, String teksti) throws IOException {
         File file = new File(tiedostonimi);
         this.kirjoittaja = new FileWriter(file);
+        
         kirjoittaja.write(teksti); 
         kirjoittaja.close();
-            
-         
+        
         return file;
     }
     
     public File kirjoitaTiedostoon(File tiedosto, String teksti) throws IOException {
         this.kirjoittaja = new FileWriter(tiedosto);
+        
         kirjoittaja.write(teksti);
         kirjoittaja.close();
+        
         return tiedosto;
         
     }

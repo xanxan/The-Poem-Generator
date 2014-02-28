@@ -4,19 +4,11 @@
  */
 package sovelluslogiikka;
 
-import sovelluslogiikka.Arpoja;
-import sovelluslogiikka.Hallinto;
-import sovelluslogiikka.Tiedostonkirjaaja;
-import sovelluslogiikka.Tiedostonlukija;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  *
@@ -40,13 +32,12 @@ public class HallintoTest {
         File tiedosto = new File("hallintoTest.txt");
        
         this.hallinto.lisaaUusiSana(tiedosto, "kello");
+        
         assertTrue(this.lukija.onkoSanaVarastossa("kello", tiedosto));
     }
     
     @Test
     public void alustaOhjelmaToimii() {
-        
-       
         
         assertTrue(hallinto.getVarasto().getVerbit() != null);
         assertTrue(hallinto.getVarasto().getVerbit().size() > 0);
